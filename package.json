@@ -1,5 +1,9 @@
 {
   "name": "project-name",
+  "repository": {
+    "type" : "git",
+    "url" : ""
+  },
   "version": "0.0.1",
   "description": "",
   "author": "",
