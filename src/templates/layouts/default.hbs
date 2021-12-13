@@ -8,16 +8,16 @@
 	
 	<title> {{ title }}</title>
 
-	<link rel="stylesheet" href="css/main.min.css">
+	<link rel="stylesheet" href="css/main.min.css?v={{moment unix=null}}">
 	
-	<script src="js/modernizr-output.js"></script>
+	<script src="js/modernizr-output.js?v={{moment unix=null}}"></script>
 </head>
 
 <body>
 
 	{{> body }}
 
-	<script src="js/bundle.js"></script>
+	<script src="js/bundle.js?v={{moment unix=null}}"></script>
 
 	<div id="notify" class="notify"></div>
 
