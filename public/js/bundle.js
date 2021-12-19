@@ -10988,13 +10988,74 @@ return jQuery;
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _modules_globals__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/globals */ "./src/js/modules/globals.js");
+/* harmony import */ var _modules_Notify__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/Notify */ "./src/js/modules/Notify.js");
+
+
+$(function () {
+  console.log("Hello, world!");
+});
+
+/***/ }),
+
+/***/ "./src/js/modules/Notify.js":
+/*!**********************************!*\
+  !*** ./src/js/modules/Notify.js ***!
+  \**********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
+
+var Notify = {
+  _counter: 0,
+  _handleItemClick: function _handleItemClick(e) {
+    e.preventDefault();
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()(e.currentTarget).remove();
+  },
+  _notify: function _notify(message, colorType) {
+    var uniqueId = ++this._counter;
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()('<div id="notify-' + uniqueId + '" class="notify__item notify__item--' + colorType + '">' + message + "</div>").prependTo(jquery__WEBPACK_IMPORTED_MODULE_0___default()("#notify"));
+    setTimeout(function () {
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#notify-" + uniqueId).remove();
+    }, 8000);
+  },
+  error: function error(message) {
+    this._notify(message, "error");
+  },
+  warning: function warning(message) {
+    this._notify(message, "warning");
+  },
+  success: function success(message) {
+    this._notify(message, "success");
+  },
+  init: function init() {
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).on("click", ".notify__item", this._handleItemClick.bind(this));
+  }
+};
+jquery__WEBPACK_IMPORTED_MODULE_0___default()(function () {
+  Notify.init();
+});
+/* harmony default export */ __webpack_exports__["default"] = (Notify);
+
+/***/ }),
+
+/***/ "./src/js/modules/globals.js":
+/*!***********************************!*\
+  !*** ./src/js/modules/globals.js ***!
+  \***********************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
 
 window.$ = window.jQuery = jquery__WEBPACK_IMPORTED_MODULE_0___default.a;
-jquery__WEBPACK_IMPORTED_MODULE_0___default()(function () {
-  console.log('Hello, world!');
-});
 
 /***/ })
 
