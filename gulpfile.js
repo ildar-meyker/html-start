@@ -9,7 +9,7 @@ const compiler = require("webpack");
 
 const gulp = require("gulp");
 const gulpif = require("gulp-if");
-const sass = require("gulp-sass");
+const sass = require("gulp-sass")(require("sass"));
 const less = require("gulp-less");
 const sourcemaps = require("gulp-sourcemaps");
 const postcss = require("gulp-postcss");
@@ -26,15 +26,15 @@ const del = require("del");
 
 const pkg = require("./package.json");
 
-if (pkg.name === "project-name") {
-	throw new Error(
-		"Project has a default name. Change it first in package.json."
-	);
-}
+// if (pkg.name === "project-name") {
+// 	throw new Error(
+// 		"Project has a default name. Change it first in package.json."
+// 	);
+// }
 
-if (pkg.repository.url === "") {
-	throw new Error("The repository url is not specified.");
-}
+// if (pkg.repository.url === "") {
+// 	throw new Error("The repository url is not specified.");
+// }
 
 require("gulp-grunt")(gulp);
 

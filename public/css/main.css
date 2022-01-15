@@ -1,0 +1,103 @@
+@font-face {
+  font-family: "icomoon-meyker";
+  src: url("../fonts/icomoon-meyker/fonts/icomoon.eot?yumzzq");
+  src: url("../fonts/icomoon-meyker/fonts/icomoon.eot?yumzzq#iefix") format("embedded-opentype"), url("../fonts/icomoon-meyker/fonts/icomoon.ttf?yumzzq") format("truetype"), url("../fonts/icomoon-meyker/fonts/icomoon.woff?yumzzq") format("woff"), url("../fonts/icomoon-meyker/fonts/icomoon.svg?yumzzq#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+[class^=icon-meyker] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: "icomoon-meyker" !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-meyker-chevron-thin-up:before {
+  content: "\e900";
+}
+
+.icon-meyker-chevron-thin-right:before {
+  content: "\e901";
+}
+
+.icon-meyker-chevron-thin-left:before {
+  content: "\e902";
+}
+
+.icon-meyker-chevron-thin-down:before {
+  content: "\e903";
+}
+
+.icon-meyker-phone:before {
+  content: "\e942";
+}
+
+.icon-meyker-quotes-right:before {
+  content: "\e978";
+}
+
+.icon-meyker-equalizer:before {
+  content: "\e992";
+}
+
+.icon-meyker-heart:before {
+  content: "\e9da";
+}
+
+.nav-slider {
+  position: relative;
+}
+.nav-slider__prev, .nav-slider__next {
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  background: #f3f3f3;
+  border-radius: 50%;
+  border: 0;
+  position: absolute;
+  z-index: 10;
+  top: 50%;
+  padding: 0.5em;
+  font-size: 20px;
+  cursor: pointer;
+}
+.nav-slider__prev {
+  left: 0;
+}
+.nav-slider__next {
+  right: 0;
+}
+.nav-slider__icon {
+  font-size: 30px;
+}
+.nav-slider__text {
+  margin-top: 10px;
+  max-width: 5em;
+}
+.nav-slider .swiper-wrapper {
+  display: flex;
+}
+.nav-slider .swiper-slide {
+  flex: 0 0 auto;
+  margin-right: 35px;
+  text-align: center;
+  width: auto;
+  text-decoration: none;
+  color: #000;
+}
+.nav-slider .swiper-slide:last-child {
+  margin-right: 0;
+}
+.nav-slider .swiper-slide.active {
+  color: #2eb674;
+}
