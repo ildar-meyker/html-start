@@ -1,5 +1,8 @@
-import $ from "jquery";
+// <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@7.4.1/swiper-bundle.min.css">
+// <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+// <script src="https://cdn.jsdelivr.net/npm/swiper@7.4.1/swiper-bundle.min.js"></script>
 
+import $ from "jquery";
 import Swiper from "swiper/bundle";
 import "swiper/css/bundle";
 
@@ -24,4 +27,4 @@ $(function () {
 	NavSlider.init();
 });
 
-export default NavSNavSliderwiper;
+export default NavSlider;

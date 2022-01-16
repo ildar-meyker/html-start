@@ -53,3 +53,35 @@ layout: default.hbs
         <i class="icon-meyker-chevron-thin-right"></i>
     </button>
 </nav>
+
+
+<h1>Audio list</h1>
+
+<div class="audio-list">
+    {{#repeat 4}}
+    <div class="audio-list__item" data-src="data/audio-samples/SoundHelix-Song-1.mp3">
+        <div class="audio-list__index"></div>
+        <button type="button" class="audio-list__button" style="background-image: url(https://loremflickr.com/500/500/music);">
+            <i class="icon-meyker-play3 audio-list__icon-play"></i>
+            <i class="icon-meyker-pause2 audio-list__icon-pause"></i>
+        </button>
+        <div class="audio-list__text">
+            <div class="audio-list__name">Оранжевая корова</div>
+            <div class="audio-list__desc">Оранжевая корова</div>
+        </div>
+        <div class="audio-list__time">2:40</div>
+    </div>
+    <div class="audio-list__item" data-src="data/audio-samples/SoundHelix-Song-2.mp3">
+        <div class="audio-list__index"></div>
+        <button type="button" class="audio-list__button" style="background-image: url(https://loremflickr.com/500/500/music);">
+            <i class="icon-meyker-play3 audio-list__icon-play"></i>
+            <i class="icon-meyker-pause2 audio-list__icon-pause"></i>
+        </button>
+        <div class="audio-list__text">
+            <div class="audio-list__name">Оранжевая корова</div>
+            <div class="audio-list__desc">Оранжевая корова</div>
+        </div>
+        <div class="audio-list__time">2:40</div>
+    </div>
+    {{/repeat}}
+</div>
