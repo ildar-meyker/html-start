@@ -81,7 +81,14 @@ gulp.task("scripts", function () {
 gulp.task("styles", function () {
 	return gulp
 		.src(["src/styles/*.*", "!src/styles/_*.*"])
-		.pipe(gulpif("*.scss", sass().on("error", sass.logError)))
+		.pipe(
+			gulpif(
+				"*.scss",
+				sass({
+					importer: require("node-sass-tilde-importer"),
+				}).on("error", sass.logError)
+			)
+		)
 		.pipe(gulpif("*.less", less()))
 		.pipe(postcss([autoprefixer()]))
 		.pipe(gulp.dest("public/css/"))
@@ -161,7 +168,7 @@ gulp.task("watch", function () {
 		gulp.series("filelist", "grunt-assemble", "reload")
 	);
 	gulp.watch("src/styles/**/*", gulp.series("sprite", "styles"));
-	gulp.watch("src/js/**", gulp.series("scripts", "reload"));
+	gulp.watch("src/js/**/*", gulp.series("scripts", "reload"));
 	gulp.watch("src/images/**", gulp.series("images", "reload"));
 	gulp.watch("src/uploads/**", gulp.series("uploads", "reload"));
 	gulp.watch(path.assets, gulp.series("copy", "reload"));

@@ -8,169 +8,237 @@
 	
 	<title> Главная</title>
 
-	<link rel="stylesheet" href="css/main.min.css?v=1642280400">
+	<link rel="stylesheet" href="css/main.min.css?v=1642366800">
 	
-	<script src="js/modernizr-output.js?v=1642280400"></script>
+	<script src="js/modernizr-output.js?v=1642366800"></script>
 </head>
 
-<body>
+<body> 
 
 	
 
-<h1>NavSlider</h1>
+<div class="demo__section">
+    <h1 class="demo__title">NavSlider</h1>
+    <nav class="nav-slider">
+        <button type="button" class="nav-slider__prev">
+            <i class="icon-meyker-chevron-thin-left"></i>
+        </button>
+        <div class="swiper">
+            <div class="swiper-wrapper">
+                <a href="#" class="swiper-slide active">
+                    <div class="nav-slider__icon">
+                        <i class="icon-meyker-heart"></i>
+                    </div>
+                    <div class="nav-slider__text">Детский сок</div>
+                </a>
+                <a href="#" class="swiper-slide">
+                    <div class="nav-slider__icon">
+                        <i class="icon-meyker-equalizer"></i>
+                    </div>
+                    <div class="nav-slider__text">Детская вода</div>
+                </a>
+                <a href="#" class="swiper-slide">
+                    <div class="nav-slider__icon">
+                        <i class="icon-meyker-quotes-right"></i>
+                    </div>
+                    <div class="nav-slider__text">Фруктовые пюре</div>
+                </a>
+                <a href="#" class="swiper-slide">
+                    <div class="nav-slider__icon">
+                        <i class="icon-meyker-phone"></i>
+                    </div>
+                    <div class="nav-slider__text">Питьевые каши</div>
+                </a>
+                <a href="#" class="swiper-slide">
+                    <div class="nav-slider__icon">
+                        <i class="icon-meyker-heart"></i>
+                    </div>
+                    <div class="nav-slider__text">Готовые блюда</div>
+                </a>
+                <a href="#" class="swiper-slide">
+                    <div class="nav-slider__icon">
+                        <i class="icon-meyker-heart"></i>
+                    </div>
+                    <div class="nav-slider__text">Отзывы</div>
+                </a>
+            </div>
+        </div>
+        <button type="button" class="nav-slider__next">
+            <i class="icon-meyker-chevron-thin-right"></i>
+        </button>
+    </nav>
+</div>
 
-<nav class="nav-slider">
-    <button type="button" class="nav-slider__prev">
-        <i class="icon-meyker-chevron-thin-left"></i>
-    </button>
-    <div class="swiper">
-        <div class="swiper-wrapper">
-            <a href="#" class="swiper-slide active">
-                <div class="nav-slider__icon">
-                    <i class="icon-meyker-heart"></i>
-                </div>
-                <div class="nav-slider__text">Детский сок</div>
-            </a>
-            <a href="#" class="swiper-slide">
-                <div class="nav-slider__icon">
-                    <i class="icon-meyker-equalizer"></i>
-                </div>
-                <div class="nav-slider__text">Детская вода</div>
-            </a>
-            <a href="#" class="swiper-slide">
-                <div class="nav-slider__icon">
-                    <i class="icon-meyker-quotes-right"></i>
-                </div>
-                <div class="nav-slider__text">Фруктовые пюре</div>
-            </a>
-            <a href="#" class="swiper-slide">
-                <div class="nav-slider__icon">
-                    <i class="icon-meyker-phone"></i>
-                </div>
-                <div class="nav-slider__text">Питьевые каши</div>
-            </a>
-            <a href="#" class="swiper-slide">
-                <div class="nav-slider__icon">
-                    <i class="icon-meyker-heart"></i>
-                </div>
-                <div class="nav-slider__text">Готовые блюда</div>
-            </a>
-            <a href="#" class="swiper-slide">
-                <div class="nav-slider__icon">
-                    <i class="icon-meyker-heart"></i>
-                </div>
-                <div class="nav-slider__text">Отзывы</div>
-            </a>
+<div class="demo__section">
+    <h1 class="demo__title">Audio list</h1>
+    <div class="audio-list">
+        <div class="audio-list__item" data-src="data/audio-samples/SoundHelix-Song-1.mp3">
+            <div class="audio-list__index"></div>
+            <button type="button" class="audio-list__button" style="background-image: url(https://loremflickr.com/500/500/music);">
+                <i class="icon-meyker-play3 audio-list__icon-play"></i>
+                <i class="icon-meyker-pause2 audio-list__icon-pause"></i>
+            </button>
+            <div class="audio-list__text">
+                <div class="audio-list__name">Оранжевая корова</div>
+                <div class="audio-list__desc">Оранжевая корова</div>
+            </div>
+            <div class="audio-list__time">2:40</div>
         </div>
-    </div>
-    <button type="button" class="nav-slider__next">
-        <i class="icon-meyker-chevron-thin-right"></i>
-    </button>
-</nav>
-
-
-<h1>Audio list</h1>
-
-<div class="audio-list">
-    <div class="audio-list__item" data-src="data/audio-samples/SoundHelix-Song-1.mp3">
-        <div class="audio-list__index"></div>
-        <button type="button" class="audio-list__button" style="background-image: url(https://loremflickr.com/500/500/music);">
-            <i class="icon-meyker-play3 audio-list__icon-play"></i>
-            <i class="icon-meyker-pause2 audio-list__icon-pause"></i>
-        </button>
-        <div class="audio-list__text">
-            <div class="audio-list__name">Оранжевая корова</div>
-            <div class="audio-list__desc">Оранжевая корова</div>
+        <div class="audio-list__item" data-src="data/audio-samples/SoundHelix-Song-2.mp3">
+            <div class="audio-list__index"></div>
+            <button type="button" class="audio-list__button" style="background-image: url(https://loremflickr.com/500/500/music);">
+                <i class="icon-meyker-play3 audio-list__icon-play"></i>
+                <i class="icon-meyker-pause2 audio-list__icon-pause"></i>
+            </button>
+            <div class="audio-list__text">
+                <div class="audio-list__name">Оранжевая корова</div>
+                <div class="audio-list__desc">Оранжевая корова</div>
+            </div>
+            <div class="audio-list__time">2:40</div>
         </div>
-        <div class="audio-list__time">2:40</div>
-    </div>
-    <div class="audio-list__item" data-src="data/audio-samples/SoundHelix-Song-2.mp3">
-        <div class="audio-list__index"></div>
-        <button type="button" class="audio-list__button" style="background-image: url(https://loremflickr.com/500/500/music);">
-            <i class="icon-meyker-play3 audio-list__icon-play"></i>
-            <i class="icon-meyker-pause2 audio-list__icon-pause"></i>
-        </button>
-        <div class="audio-list__text">
-            <div class="audio-list__name">Оранжевая корова</div>
-            <div class="audio-list__desc">Оранжевая корова</div>
+        <div class="audio-list__item" data-src="data/audio-samples/SoundHelix-Song-1.mp3">
+            <div class="audio-list__index"></div>
+            <button type="button" class="audio-list__button" style="background-image: url(https://loremflickr.com/500/500/music);">
+                <i class="icon-meyker-play3 audio-list__icon-play"></i>
+                <i class="icon-meyker-pause2 audio-list__icon-pause"></i>
+            </button>
+            <div class="audio-list__text">
+                <div class="audio-list__name">Оранжевая корова</div>
+                <div class="audio-list__desc">Оранжевая корова</div>
+            </div>
+            <div class="audio-list__time">2:40</div>
         </div>
-        <div class="audio-list__time">2:40</div>
-    </div>
-    <div class="audio-list__item" data-src="data/audio-samples/SoundHelix-Song-1.mp3">
-        <div class="audio-list__index"></div>
-        <button type="button" class="audio-list__button" style="background-image: url(https://loremflickr.com/500/500/music);">
-            <i class="icon-meyker-play3 audio-list__icon-play"></i>
-            <i class="icon-meyker-pause2 audio-list__icon-pause"></i>
-        </button>
-        <div class="audio-list__text">
-            <div class="audio-list__name">Оранжевая корова</div>
-            <div class="audio-list__desc">Оранжевая корова</div>
+        <div class="audio-list__item" data-src="data/audio-samples/SoundHelix-Song-2.mp3">
+            <div class="audio-list__index"></div>
+            <button type="button" class="audio-list__button" style="background-image: url(https://loremflickr.com/500/500/music);">
+                <i class="icon-meyker-play3 audio-list__icon-play"></i>
+                <i class="icon-meyker-pause2 audio-list__icon-pause"></i>
+            </button>
+            <div class="audio-list__text">
+                <div class="audio-list__name">Оранжевая корова</div>
+                <div class="audio-list__desc">Оранжевая корова</div>
+            </div>
+            <div class="audio-list__time">2:40</div>
         </div>
-        <div class="audio-list__time">2:40</div>
-    </div>
-    <div class="audio-list__item" data-src="data/audio-samples/SoundHelix-Song-2.mp3">
-        <div class="audio-list__index"></div>
-        <button type="button" class="audio-list__button" style="background-image: url(https://loremflickr.com/500/500/music);">
-            <i class="icon-meyker-play3 audio-list__icon-play"></i>
-            <i class="icon-meyker-pause2 audio-list__icon-pause"></i>
-        </button>
-        <div class="audio-list__text">
-            <div class="audio-list__name">Оранжевая корова</div>
-            <div class="audio-list__desc">Оранжевая корова</div>
+        <div class="audio-list__item" data-src="data/audio-samples/SoundHelix-Song-1.mp3">
+            <div class="audio-list__index"></div>
+            <button type="button" class="audio-list__button" style="background-image: url(https://loremflickr.com/500/500/music);">
+                <i class="icon-meyker-play3 audio-list__icon-play"></i>
+                <i class="icon-meyker-pause2 audio-list__icon-pause"></i>
+            </button>
+            <div class="audio-list__text">
+                <div class="audio-list__name">Оранжевая корова</div>
+                <div class="audio-list__desc">Оранжевая корова</div>
+            </div>
+            <div class="audio-list__time">2:40</div>
         </div>
-        <div class="audio-list__time">2:40</div>
-    </div>
-    <div class="audio-list__item" data-src="data/audio-samples/SoundHelix-Song-1.mp3">
-        <div class="audio-list__index"></div>
-        <button type="button" class="audio-list__button" style="background-image: url(https://loremflickr.com/500/500/music);">
-            <i class="icon-meyker-play3 audio-list__icon-play"></i>
-            <i class="icon-meyker-pause2 audio-list__icon-pause"></i>
-        </button>
-        <div class="audio-list__text">
-            <div class="audio-list__name">Оранжевая корова</div>
-            <div class="audio-list__desc">Оранжевая корова</div>
+        <div class="audio-list__item" data-src="data/audio-samples/SoundHelix-Song-2.mp3">
+            <div class="audio-list__index"></div>
+            <button type="button" class="audio-list__button" style="background-image: url(https://loremflickr.com/500/500/music);">
+                <i class="icon-meyker-play3 audio-list__icon-play"></i>
+                <i class="icon-meyker-pause2 audio-list__icon-pause"></i>
+            </button>
+            <div class="audio-list__text">
+                <div class="audio-list__name">Оранжевая корова</div>
+                <div class="audio-list__desc">Оранжевая корова</div>
+            </div>
+            <div class="audio-list__time">2:40</div>
         </div>
-        <div class="audio-list__time">2:40</div>
-    </div>
-    <div class="audio-list__item" data-src="data/audio-samples/SoundHelix-Song-2.mp3">
-        <div class="audio-list__index"></div>
-        <button type="button" class="audio-list__button" style="background-image: url(https://loremflickr.com/500/500/music);">
-            <i class="icon-meyker-play3 audio-list__icon-play"></i>
-            <i class="icon-meyker-pause2 audio-list__icon-pause"></i>
-        </button>
-        <div class="audio-list__text">
-            <div class="audio-list__name">Оранжевая корова</div>
-            <div class="audio-list__desc">Оранжевая корова</div>
+        <div class="audio-list__item" data-src="data/audio-samples/SoundHelix-Song-1.mp3">
+            <div class="audio-list__index"></div>
+            <button type="button" class="audio-list__button" style="background-image: url(https://loremflickr.com/500/500/music);">
+                <i class="icon-meyker-play3 audio-list__icon-play"></i>
+                <i class="icon-meyker-pause2 audio-list__icon-pause"></i>
+            </button>
+            <div class="audio-list__text">
+                <div class="audio-list__name">Оранжевая корова</div>
+                <div class="audio-list__desc">Оранжевая корова</div>
+            </div>
+            <div class="audio-list__time">2:40</div>
         </div>
-        <div class="audio-list__time">2:40</div>
-    </div>
-    <div class="audio-list__item" data-src="data/audio-samples/SoundHelix-Song-1.mp3">
-        <div class="audio-list__index"></div>
-        <button type="button" class="audio-list__button" style="background-image: url(https://loremflickr.com/500/500/music);">
-            <i class="icon-meyker-play3 audio-list__icon-play"></i>
-            <i class="icon-meyker-pause2 audio-list__icon-pause"></i>
-        </button>
-        <div class="audio-list__text">
-            <div class="audio-list__name">Оранжевая корова</div>
-            <div class="audio-list__desc">Оранжевая корова</div>
+        <div class="audio-list__item" data-src="data/audio-samples/SoundHelix-Song-2.mp3">
+            <div class="audio-list__index"></div>
+            <button type="button" class="audio-list__button" style="background-image: url(https://loremflickr.com/500/500/music);">
+                <i class="icon-meyker-play3 audio-list__icon-play"></i>
+                <i class="icon-meyker-pause2 audio-list__icon-pause"></i>
+            </button>
+            <div class="audio-list__text">
+                <div class="audio-list__name">Оранжевая корова</div>
+                <div class="audio-list__desc">Оранжевая корова</div>
+            </div>
+            <div class="audio-list__time">2:40</div>
         </div>
-        <div class="audio-list__time">2:40</div>
-    </div>
-    <div class="audio-list__item" data-src="data/audio-samples/SoundHelix-Song-2.mp3">
-        <div class="audio-list__index"></div>
-        <button type="button" class="audio-list__button" style="background-image: url(https://loremflickr.com/500/500/music);">
-            <i class="icon-meyker-play3 audio-list__icon-play"></i>
-            <i class="icon-meyker-pause2 audio-list__icon-pause"></i>
-        </button>
-        <div class="audio-list__text">
-            <div class="audio-list__name">Оранжевая корова</div>
-            <div class="audio-list__desc">Оранжевая корова</div>
-        </div>
-        <div class="audio-list__time">2:40</div>
     </div>
 </div>
 
-	<script src="js/bundle.js?v=1642280400"></script>
+<div class="demo__section">
+    <h1 class="demo__title">Slider Videos</h1>
+    <div class="slider-videos">
+        <div class="slider-videos__slider">
+            <button type="button" class="slider-videos__prev">
+                <i class="icon-meyker-chevron-thin-left"></i>
+            </button>
+            <div class="slider-videos__body">
+                <div class="slider-videos__list">
+                    <div class="slider-videos__item">
+                        <div class="slider-videos__image" style="background-image: url(https://loremflickr.com/500/500/nature);"></div>
+                        <button type="button" class="slider-videos__play">
+                            <i class="icon-meyker-play3"></i>
+                        </button>
+                    </div>
+                    <div class="slider-videos__item">
+                        <div class="slider-videos__image" style="background-image: url(https://loremflickr.com/500/500/nature);"></div>
+                        <button type="button" class="slider-videos__play">
+                            <i class="icon-meyker-play3"></i>
+                        </button>
+                    </div>
+                    <div class="slider-videos__item">
+                        <div class="slider-videos__image" style="background-image: url(https://loremflickr.com/500/500/nature);"></div>
+                        <button type="button" class="slider-videos__play">
+                            <i class="icon-meyker-play3"></i>
+                        </button>
+                    </div>
+                    <div class="slider-videos__item">
+                        <div class="slider-videos__image" style="background-image: url(https://loremflickr.com/500/500/nature);"></div>
+                        <button type="button" class="slider-videos__play">
+                            <i class="icon-meyker-play3"></i>
+                        </button>
+                    </div>
+                    <div class="slider-videos__item">
+                        <div class="slider-videos__image" style="background-image: url(https://loremflickr.com/500/500/nature);"></div>
+                        <button type="button" class="slider-videos__play">
+                            <i class="icon-meyker-play3"></i>
+                        </button>
+                    </div>
+                    <div class="slider-videos__item">
+                        <div class="slider-videos__image" style="background-image: url(https://loremflickr.com/500/500/nature);"></div>
+                        <button type="button" class="slider-videos__play">
+                            <i class="icon-meyker-play3"></i>
+                        </button>
+                    </div>
+                    <div class="slider-videos__item">
+                        <div class="slider-videos__image" style="background-image: url(https://loremflickr.com/500/500/nature);"></div>
+                        <button type="button" class="slider-videos__play">
+                            <i class="icon-meyker-play3"></i>
+                        </button>
+                    </div>
+                    <div class="slider-videos__item">
+                        <div class="slider-videos__image" style="background-image: url(https://loremflickr.com/500/500/nature);"></div>
+                        <button type="button" class="slider-videos__play">
+                            <i class="icon-meyker-play3"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <button type="button" class="slider-videos__next">
+                <i class="icon-meyker-chevron-thin-right"></i>
+            </button>
+        </div>
+        <div class="slider-videos__dots"></div>
+    </div>
+</div>
+
+	<script src="js/bundle.js?v=1642366800"></script>
 
 	<div id="notify" class="notify"></div>
 
