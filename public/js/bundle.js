@@ -162,6 +162,66 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(function () {
 
 /***/ }),
 
+/***/ "./src/js/modules/SliderLogos.js":
+/*!***************************************!*\
+  !*** ./src/js/modules/SliderLogos.js ***!
+  \***************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var slick_carousel__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! slick-carousel */ "./node_modules/slick-carousel/slick/slick.js");
+/* harmony import */ var slick_carousel__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(slick_carousel__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var slick_carousel_slick_slick_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! slick-carousel/slick/slick.scss */ "./node_modules/slick-carousel/slick/slick.scss");
+// <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+// <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+// <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+
+
+var SliderLogos = {
+  init: function init() {
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()(".slider-logos__root").each(function () {
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).find(".slider-logos__list").slick({
+        dots: true,
+        infinite: false,
+        slidesToShow: 4,
+        slidesToScroll: 4,
+        prevArrow: jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).find(".slider-logos__prev"),
+        appendDots: jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).find(".slider-logos__dots"),
+        nextArrow: jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).find(".slider-logos__next"),
+        responsive: [{
+          breakpoint: 992,
+          settings: {
+            slidesToShow: 3,
+            slidesToScroll: 3
+          }
+        }, {
+          breakpoint: 768,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 2
+          }
+        }, {
+          breakpoint: 600,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1
+          }
+        }]
+      });
+    });
+  }
+};
+jquery__WEBPACK_IMPORTED_MODULE_0___default()(function () {
+  SliderLogos.init();
+});
+/* harmony default export */ __webpack_exports__["default"] = (SliderLogos);
+
+/***/ }),
+
 /***/ "./src/js/modules/SliderVideos.js":
 /*!****************************************!*\
   !*** ./src/js/modules/SliderVideos.js ***!
@@ -30686,6 +30746,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_NavSlider__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/NavSlider */ "./src/js/modules/NavSlider.js");
 /* harmony import */ var _modules_AudioList__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/AudioList */ "./src/js/modules/AudioList.js");
 /* harmony import */ var _modules_SliderVideos__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/SliderVideos */ "./src/js/modules/SliderVideos.js");
+/* harmony import */ var _modules_SliderLogos__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modules/SliderLogos */ "./src/js/modules/SliderLogos.js");
+
 
 
 

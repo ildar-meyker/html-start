@@ -3,6 +3,8 @@ title: Главная
 layout: default.hbs
 ---
 
+
+
 <div class="demo__section">
     <h1 class="demo__title">Table Props</h1>
     <div class="table-props">
@@ -19,6 +21,21 @@ layout: default.hbs
             <dd><span>Biter grapefruit</span></dd>
         </dl>
     </div>
+</div>
+
+<div class="demo__section">
+    <h1 class="demo__title">Nav Finger</h1>
+    <nav class="nav-finger">
+        <a href="#" class="nav-finger__item nav-finger__item--blue">
+            <div class="nav-finger__text">Tonic</div>
+        </a>
+        <a href="#" class="nav-finger__item nav-finger__item--green">
+            <div class="nav-finger__text">Proseggio</div>
+        </a>
+        <a href="#" class="nav-finger__item">
+            <div class="nav-finger__text">Bitter</div>
+        </a>
+    </nav>
 </div>
 
 <div class="demo__section">
@@ -169,5 +186,43 @@ layout: default.hbs
             </button>
         </div>
         <div class="slider-videos__dots"></div>
+    </div>
+</div>
+
+<div class="demo__section">
+    <h1 class="demo__title">Slider Logos</h1>
+    <div class="slider-logos">
+        <div class="slider-logos__root">
+            <div class="slider-logos__slider">
+                <button type="button" class="slider-logos__prev">
+                    <i class="icon-meyker-chevron-thin-left"></i>
+                </button>
+                <div class="slider-logos__body">
+                    <div class="slider-logos__list">
+                    {{#repeat 2}}
+                        <div class="slider-logos__item">
+                            <div class="slider-logos__image" style="background-image: url(images/temp/logos/1.png);"></div>
+                        </div>
+                        <div class="slider-logos__item">
+                            <div class="slider-logos__image" style="background-image: url(images/temp/logos/2.png);"></div>
+                        </div>
+                        <div class="slider-logos__item">
+                            <div class="slider-logos__image" style="background-image: url(images/temp/logos/3.png);"></div>
+                        </div>
+                        <div class="slider-logos__item">
+                            <div class="slider-logos__image" style="background-image: url(images/temp/logos/4.png);"></div>
+                        </div>
+                        <div class="slider-logos__item">
+                            <div class="slider-logos__image" style="background-image: url(images/temp/logos/5.png);"></div>
+                        </div>
+                        {{/repeat}}
+                    </div>
+                </div>
+                <button type="button" class="slider-logos__next">
+                    <i class="icon-meyker-chevron-thin-right"></i>
+                </button>
+            </div>
+            <div class="slider-logos__dots"></div>
+        </div>
     </div>
 </div>
