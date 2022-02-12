@@ -162,6 +162,83 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(function () {
 
 /***/ }),
 
+/***/ "./src/js/modules/OfficesMap.js":
+/*!**************************************!*\
+  !*** ./src/js/modules/OfficesMap.js ***!
+  \**************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
+
+
+
+var ContactsMap = /*#__PURE__*/function () {
+  function ContactsMap(options) {
+    var _this = this;
+
+    _classCallCheck(this, ContactsMap);
+
+    this.map = null;
+    this.placemarks = [];
+    this.loadedList = [];
+    this.options = Object.assign({}, options);
+    this.drawMap();
+    jquery__WEBPACK_IMPORTED_MODULE_0___default().getJSON(this.options.dataUrl).done(function (data) {
+      _this.loadedList = data;
+
+      _this.drawMarkers();
+    }).fail(function () {
+      console.error("Map addresses loading is failed.");
+    });
+  }
+
+  _createClass(ContactsMap, [{
+    key: "drawMap",
+    value: function drawMap() {
+      this.map = new ymaps.Map(this.options.el, {
+        controls: [],
+        center: this.options.center,
+        zoom: this.options.zoom || 10
+      });
+    }
+  }, {
+    key: "drawMarkers",
+    value: function drawMarkers() {
+      var _this2 = this;
+
+      this.loadedList.forEach(function (item) {
+        var placemark = new ymaps.Placemark(item.position, {
+          balloonContentBody: item.content,
+          hintContent: item.title
+        }, {
+          iconLayout: "default#image",
+          iconImageHref: _this2.options.iconUrl,
+          iconImageOffset: _this2.options.iconOffset,
+          iconImageSize: _this2.options.iconSize
+        });
+
+        _this2.map.geoObjects.add(placemark);
+
+        _this2.placemarks[item.id] = placemark;
+      });
+    }
+  }]);
+
+  return ContactsMap;
+}();
+
+/* harmony default export */ __webpack_exports__["default"] = (ContactsMap);
+
+/***/ }),
+
 /***/ "./src/js/modules/SliderLogos.js":
 /*!***************************************!*\
   !*** ./src/js/modules/SliderLogos.js ***!
@@ -30747,14 +30824,24 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_AudioList__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/AudioList */ "./src/js/modules/AudioList.js");
 /* harmony import */ var _modules_SliderVideos__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/SliderVideos */ "./src/js/modules/SliderVideos.js");
 /* harmony import */ var _modules_SliderLogos__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modules/SliderLogos */ "./src/js/modules/SliderLogos.js");
+/* harmony import */ var _modules_OfficesMap__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./modules/OfficesMap */ "./src/js/modules/OfficesMap.js");
 
 
 
 
 
 
-$(function () {
-  console.log("Hello, world!");
+
+ymaps.ready(function () {
+  new _modules_OfficesMap__WEBPACK_IMPORTED_MODULE_6__["default"]({
+    el: "offices-map",
+    center: [55.7600134479554, 37.6234488098733],
+    zoom: 8,
+    dataUrl: "data/map-addresses.json",
+    iconUrl: "data/map-icon.png",
+    iconOffset: [-28, -68],
+    iconSize: [56, 68]
+  });
 });
 }();
 /******/ })()

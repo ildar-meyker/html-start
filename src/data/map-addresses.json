@@ -1,0 +1,260 @@
+[
+	{
+		"id": "84817",
+		"title": "АндерСон на Большой Семеновской",
+		"position": ["55.780251404645", "37.717152794477"],
+		"content": "<div class=\"yandex-map__content\">\r\n    <div class=\"yandex-map__title\">АндерСон на Большой Семеновской</div>\r\n    <div class=\"yandex-map__address\">город Москва, ул. Большая Семеновская, д.50</div>\r\n    <div class=\"yandex-map__phones\"><a href=\"tel:+74952219363\">+7 495-221-93-63</a><br><a href=\"tel:+74952219363\">+7 495-221-93-63</a></div><div class=\"yandex-map__emails\"><a href=\"mailto:cafe_bsemenovskaya@cafe-anderson.ru\">cafe_bsemenovskaya@cafe-anderson.ru</a>,<a href=\"mailto:dir_semen@cafe-Anderson.ru\">dir_semen@cafe-Anderson.ru</a></div></div>"
+	},
+	{
+		"id": "372",
+		"title": "АндерСон Гиляровского",
+		"position": ["55.783684755967", "37.63225288332"],
+		"content": "<div class=\"yandex-map__content\">\r\n    <div class=\"yandex-map__title\">АндерСон Гиляровского</div>\r\n    <div class=\"yandex-map__address\">ул. Гиляровского,  д.  39, стр.3</div>\r\n    <div class=\"yandex-map__phones\"><a href=\"tel:+79096555494\">+7 909-655-54-94</a><br></div><div class=\"yandex-map__emails\"><a href=\"mailto:gilyarovskogo@cafe-anderson.ru\">gilyarovskogo@cafe-anderson.ru</a>,<a href=\"mailto:cafe_gilyarovskogo@cafe-anderson.ru\">cafe_gilyarovskogo@cafe-anderson.ru</a></div></div>"
+	},
+	{
+		"id": "85784",
+		"title": "АндерСон на Льва Толстого",
+		"position": ["55.736001102192", "37.583563634197"],
+		"content": "<div class=\"yandex-map__content\">\r\n    <div class=\"yandex-map__title\">АндерСон на Льва Толстого</div>\r\n    <div class=\"yandex-map__address\">ул. Льва Толстого д.23к1</div>\r\n    <div class=\"yandex-map__phones\"><a href=\"tel:+74952219363\">+7 495-221-93-63</a><br><a href=\"tel:+79037309818\">+7 903-730-98-18</a></div><div class=\"yandex-map__emails\"><a href=\"mailto:cafe_lvatolstogo@cafe-anderson.ru\">cafe_lvatolstogo@cafe-anderson.ru</a>,<a href=\"mailto:elizavetailev@gmail.com\">elizavetailev@gmail.com</a></div></div>"
+	},
+	{
+		"id": "61959",
+		"title": "АндерСон в Воронеже",
+		"position": ["51.664930321802", "39.205351960212"],
+		"content": "<div class=\"yandex-map__content\">\r\n    <div class=\"yandex-map__title\">АндерСон в Воронеже</div>\r\n    <div class=\"yandex-map__address\">ул. Карла Маркса, д. 53</div>\r\n    <div class=\"yandex-map__phones\"><a href=\"tel:+74732516499\">+7 473-251-64-99</a><br><a href=\"tel:+79030302201\">+7 903-030-22-01</a></div><div class=\"yandex-map__emails\"><a href=\"mailto:cafe_voronej@cafe-anderson.ru\">cafe_voronej@cafe-anderson.ru</a></div></div>"
+	},
+	{
+		"id": "56079",
+		"title": "АндерСон Митино ТРЦ «Ладья»",
+		"position": ["55.845895266814", "37.358328517197"],
+		"content": "<div class=\"yandex-map__content\">\r\n    <div class=\"yandex-map__title\">АндерСон Митино ТРЦ «Ладья»</div>\r\n    <div class=\"yandex-map__address\">ул. Дубравная, д.34/29</div>\r\n    <div class=\"yandex-map__phones\"><a href=\"tel:+79163211616\">+7 916-321-16-16</a><br></div><div class=\"yandex-map__emails\"><a href=\"mailto:cafe_ladya@cafe-anderson.ru\">cafe_ladya@cafe-anderson.ru</a>,<a href=\"mailto:dir_ladya@cafe-anderson.ru, cafe_ladya@cafe-anderson.ru\">dir_ladya@cafe-anderson.ru, cafe_ladya@cafe-anderson.ru</a></div></div>"
+	},
+	{
+		"id": "85785",
+		"title": "Вилла АндерСон",
+		"position": ["55.69108", "37.746795"],
+		"content": "<div class=\"yandex-map__content\">\r\n    <div class=\"yandex-map__title\">Вилла АндерСон</div>\r\n    <div class=\"yandex-map__address\">ул. Шкулева д. 2А стр 1</div>\r\n    <div class=\"yandex-map__phones\"><a href=\"tel:+74952219363\">+7 495-221-93-63</a><br><a href=\"tel:+79857800550\">+7 985-780-05-50</a></div><div class=\"yandex-map__emails\"><a href=\"mailto:cafe_lyublino@cafe-anderson.ru\">cafe_lyublino@cafe-anderson.ru</a>,<a href=\"mailto:cafe_villa@cafe-anderson.ru \">cafe_villa@cafe-anderson.ru </a></div></div>"
+	},
+	{
+		"id": "85786",
+		"title": "АндерСон на Маршала Жукова",
+		"position": ["55.777733381714", "37.458261091148"],
+		"content": "<div class=\"yandex-map__content\">\r\n    <div class=\"yandex-map__title\">АндерСон на Маршала Жукова</div>\r\n    <div class=\"yandex-map__address\">проспект Маршала Жукова, д. 59</div>\r\n    <div class=\"yandex-map__phones\"><a href=\"tel:+79647609194\">+7 964-760-91-94</a><br><a href=\"tel:+79998896778\">+7 999-889-67-78</a></div><div class=\"yandex-map__emails\"><a href=\"mailto:cafe_marshalazhukova@cafe-anderson.ru\">cafe_marshalazhukova@cafe-anderson.ru</a></div></div>"
+	},
+	{
+		"id": "371",
+		"title": "АндерСон Сокол",
+		"position": ["55.806848491717", "37.517926974869"],
+		"content": "<div class=\"yandex-map__content\">\r\n    <div class=\"yandex-map__title\">АндерСон Сокол</div>\r\n    <div class=\"yandex-map__address\">Ленинградский проспект, д. 74, стр. 8</div>\r\n    <div class=\"yandex-map__phones\"><a href=\"tel:+74956266055\">+7 495-626-60-55</a><br><a href=\"tel:+74951254924\">+7 495-125-49-24</a></div><div class=\"yandex-map__emails\"><a href=\"mailto:sokol@cafe-anderson.ru\">sokol@cafe-anderson.ru</a>,<a href=\"mailto:cafe_sokol@cafe-anderson.ru\">cafe_sokol@cafe-anderson.ru</a></div></div>"
+	},
+	{
+		"id": "375",
+		"title": "АндерСон в ЖК Каскад на набережной Туполева",
+		"position": ["55.761579536759", "37.68310514185"],
+		"content": "<div class=\"yandex-map__content\">\r\n    <div class=\"yandex-map__title\">АндерСон в ЖК Каскад на набережной Туполева</div>\r\n    <div class=\"yandex-map__address\">наб. Академика Туполева, д. 15, к. 2</div>\r\n    <div class=\"yandex-map__phones\"><a href=\"tel:+79096560518\">+7 909-656-05-18</a><br></div><div class=\"yandex-map__emails\"><a href=\"mailto:kaskad@cafe-anderson.ru\">kaskad@cafe-anderson.ru</a>,<a href=\"mailto:cafe_kaskad@cafe-Anderson.ru\">cafe_kaskad@cafe-Anderson.ru</a></div></div>"
+	},
+	{
+		"id": "376",
+		"title": "АндерСон Островитянова",
+		"position": ["55.644621258738", "37.493769152115"],
+		"content": "<div class=\"yandex-map__content\">\r\n    <div class=\"yandex-map__title\">АндерСон Островитянова</div>\r\n    <div class=\"yandex-map__address\">ул. Островитянова, д.5</div>\r\n    <div class=\"yandex-map__phones\"><a href=\"tel:+79651586550\">+7 965-158-65-50</a><br><a href=\"tel:+79653202749\">+7 965-320-27-49</a></div><div class=\"yandex-map__emails\"><a href=\"mailto:ostrovitianova@cafe-anderson.ru\">ostrovitianova@cafe-anderson.ru</a>,<a href=\"mailto:Dir_ostrovitianova@cafe-anderson.ru, cafe_ostrovitianova@cafe-anderson.ru\">Dir_ostrovitianova@cafe-anderson.ru, cafe_ostrovitianova@cafe-anderson.ru</a></div></div>"
+	},
+	{
+		"id": "379",
+		"title": "АндерСон Братиславская",
+		"position": ["55.664043440047", "37.753384474869"],
+		"content": "<div class=\"yandex-map__content\">\r\n    <div class=\"yandex-map__title\">АндерСон Братиславская</div>\r\n    <div class=\"yandex-map__address\">ул. Братиславская, д. 6</div>\r\n    <div class=\"yandex-map__phones\"><a href=\"tel:+79037631978\">+7 903-763-19-78</a><br><a href=\"tel:+74952219363\">+7 495-221-93-63</a></div><div class=\"yandex-map__emails\"><a href=\"mailto:bratislavskaya@cafe-anderson.ru\">bratislavskaya@cafe-anderson.ru</a>,<a href=\"mailto:cafe_bratislavskaya@cafe-anderson.ru\">cafe_bratislavskaya@cafe-anderson.ru</a></div></div>"
+	},
+	{
+		"id": "167291",
+		"title": " АндерСон Владимир",
+		"position": ["56.165629", "40.468286"],
+		"content": "<div class=\"yandex-map__content\">\r\n    <div class=\"yandex-map__title\"> АндерСон Владимир</div>\r\n    <div class=\"yandex-map__address\">г. Владимир, Суздальский проспект, д.8.</div>\r\n    <div class=\"yandex-map__phones\"><a href=\"tel:+79915306262\">+7 991-530-62-62</a><br></div><div class=\"yandex-map__emails\"><a href=\"mailto:Dir_vladimir@cafe-anderson.ru\">Dir_vladimir@cafe-anderson.ru</a>,<a href=\"mailto:Dir_vladimir@cafe-anderson.ru, Cafe_vladimir@cafe-anderson.ru\">Dir_vladimir@cafe-anderson.ru, Cafe_vladimir@cafe-anderson.ru</a></div></div>"
+	},
+	{
+		"id": "381",
+		"title": "АндерСон Формула Кино в ТРЦ «Фестиваль»",
+		"position": ["55.677429203418", "37.466506071758"],
+		"content": "<div class=\"yandex-map__content\">\r\n    <div class=\"yandex-map__title\">АндерСон Формула Кино в ТРЦ «Фестиваль»</div>\r\n    <div class=\"yandex-map__address\">Мичуринский проспект, Олимпийская деревня, д.3, к.1, ТЦ Фестиваль, 3 этаж, Формула Кино</div>\r\n    <div class=\"yandex-map__phones\"><a href=\"tel:+74992777811\">+7 499-277-78-11</a><br><a href=\"tel:+79645779834\">+7 964-577-98-34</a></div><div class=\"yandex-map__emails\"><a href=\"mailto:michurinskiy@cafe-anderson.ru \">michurinskiy@cafe-anderson.ru </a>,<a href=\"mailto:cafe_festival@cafe-anderson.ru\">cafe_festival@cafe-anderson.ru</a></div></div>"
+	},
+	{
+		"id": "382",
+		"title": "АндерСон в Ярославле",
+		"position": ["57.62822313225", "39.877976775463"],
+		"content": "<div class=\"yandex-map__content\">\r\n    <div class=\"yandex-map__title\">АндерСон в Ярославле</div>\r\n    <div class=\"yandex-map__address\">ул. Республиканская, д.68</div>\r\n    <div class=\"yandex-map__phones\"><a href=\"tel:+74852205280\">+7 485-220-52-80</a><br></div><div class=\"yandex-map__emails\"><a href=\"mailto:info@anderson-yaroslavl.ru\">info@anderson-yaroslavl.ru</a>,<a href=\"mailto:party@anderson-yaroslavl.ru\">party@anderson-yaroslavl.ru</a></div></div>"
+	},
+	{
+		"id": "386",
+		"title": "АндерСон на Обручева",
+		"position": ["55.65643133189", "37.525537869034"],
+		"content": "<div class=\"yandex-map__content\">\r\n    <div class=\"yandex-map__title\">АндерСон на Обручева</div>\r\n    <div class=\"yandex-map__address\">ул. Обручева, д. 30/1</div>\r\n    <div class=\"yandex-map__phones\"><a href=\"tel:+79067409563\">+7 906-740-95-63</a><br><a href=\"tel:+74951254924\">+7 495-125-49-24</a></div><div class=\"yandex-map__emails\"><a href=\"mailto:obrucheva@cafe-anderson.ru\">obrucheva@cafe-anderson.ru</a>,<a href=\"mailto:cafe_obrucheva@cafe-Anderson.ru\">cafe_obrucheva@cafe-Anderson.ru</a></div></div>"
+	},
+	{
+		"id": "87426",
+		"title": "АндерСон Донской Олимп",
+		"position": ["55.71083744286", "37.607223194443"],
+		"content": "<div class=\"yandex-map__content\">\r\n    <div class=\"yandex-map__title\">АндерСон Донской Олимп</div>\r\n    <div class=\"yandex-map__address\">Москва, Серпуховской вал, д. 21, корп. 4</div>\r\n    <div class=\"yandex-map__phones\"><a href=\"tel:+74994005670\">+7 499-400-56-70</a><br><a href=\"tel:+79857190910\">+7 985-719-09-10</a></div><div class=\"yandex-map__emails\"><a href=\"mailto:cafe_donskoyolimp@cafe-anderson.ru\">cafe_donskoyolimp@cafe-anderson.ru</a>,<a href=\"mailto:cafe_donskoyolimp@cafe-anderson.ru, l.shishakova@cafe-anderson.ru\">cafe_donskoyolimp@cafe-anderson.ru, l.shishakova@cafe-anderson.ru</a></div></div>"
+	},
+	{
+		"id": "387",
+		"title": "АндерСон Красносельская",
+		"position": ["55.784841429184", "37.660940999336"],
+		"content": "<div class=\"yandex-map__content\">\r\n    <div class=\"yandex-map__title\">АндерСон Красносельская</div>\r\n    <div class=\"yandex-map__address\">ул. Верхняя Красносельская, д. 7/2</div>\r\n    <div class=\"yandex-map__phones\"><a href=\"tel:+79295030848\">+7 929-503-08-48</a><br></div><div class=\"yandex-map__emails\"><a href=\"mailto:krasnoselskaya@cafe-anderson.ru\">krasnoselskaya@cafe-anderson.ru</a>,<a href=\"mailto:dir_krasnoselskaya@cafe-anderson.ru\">dir_krasnoselskaya@cafe-anderson.ru</a></div></div>"
+	},
+	{
+		"id": "388",
+		"title": "АндерСон «Пятая Авеню» на Маршала Бирюзова",
+		"position": ["55.799744697164", "37.482689906082"],
+		"content": "<div class=\"yandex-map__content\">\r\n    <div class=\"yandex-map__title\">АндерСон «Пятая Авеню» на Маршала Бирюзова</div>\r\n    <div class=\"yandex-map__address\">ул. Маршала Бирюзова, д. 32, ТРЦ «Пятая авеню»</div>\r\n    <div class=\"yandex-map__phones\"><a href=\"tel:+79067409479\">+7 906-740-94-79</a><br></div><div class=\"yandex-map__emails\"><a href=\"mailto:cafe_avenu@cafe-anderson.ru\">cafe_avenu@cafe-anderson.ru</a>,<a href=\"mailto:cafe_avenu@cafe-anderson.ru\">cafe_avenu@cafe-anderson.ru</a></div></div>"
+	},
+	{
+		"id": "390",
+		"title": "АндерСон Таганский парк",
+		"position": ["55.738756117254", "37.66721102943"],
+		"content": "<div class=\"yandex-map__content\">\r\n    <div class=\"yandex-map__title\">АндерСон Таганский парк</div>\r\n    <div class=\"yandex-map__address\">Таганский Парк, ул. Таганская, 40/42</div>\r\n    <div class=\"yandex-map__phones\"><a href=\"tel:+79035675875\">+7 903-567-58-75</a><br></div><div class=\"yandex-map__emails\"><a href=\"mailto:taganskypark@cafe-anderson.ru\">taganskypark@cafe-anderson.ru</a>,<a href=\"mailto:cafe_taganskaya36@cafe-anderson.ru\">cafe_taganskaya36@cafe-anderson.ru</a></div></div>"
+	},
+	{
+		"id": "121735",
+		"title": "АндерСон в Краснодаре",
+		"position": ["45.025792691824", "38.958836707024"],
+		"content": "<div class=\"yandex-map__content\">\r\n    <div class=\"yandex-map__title\">АндерСон в Краснодаре</div>\r\n    <div class=\"yandex-map__address\">Краснодар, ул. Кубанская набережная, 39. ЖК Адмирал</div>\r\n    <div class=\"yandex-map__phones\"><a href=\"tel:+79676571470\">+7 967-657-14-70</a><br></div><div class=\"yandex-map__emails\"><a href=\"mailto:cafe_krasnodar@cafe-anderson.ru\">cafe_krasnodar@cafe-anderson.ru</a></div></div>"
+	},
+	{
+		"id": "393",
+		"title": "АндерСон Королев",
+		"position": ["55.92036875849", "37.867744354001"],
+		"content": "<div class=\"yandex-map__content\">\r\n    <div class=\"yandex-map__title\">АндерСон Королев</div>\r\n    <div class=\"yandex-map__address\">Проспект Космонавтов, д. 4В</div>\r\n    <div class=\"yandex-map__phones\"><a href=\"tel:+79167801064\">+7 916-780-10-64</a><br><a href=\"tel:+74955105550\">+7 495-510-55-50</a></div><div class=\"yandex-map__emails\"><a href=\"mailto:anderson_korolev@cafe-anderson.ru\">anderson_korolev@cafe-anderson.ru</a>,<a href=\"mailto:dir_korolev@cafe-anderson.ru, anderson_korolev@cafe-anderson.ru\">dir_korolev@cafe-anderson.ru, anderson_korolev@cafe-anderson.ru</a></div></div>"
+	},
+	{
+		"id": "395",
+		"title": "АндерСон на Даче. ВДНХ.",
+		"position": ["55.828101201904", "37.62771772645"],
+		"content": "<div class=\"yandex-map__content\">\r\n    <div class=\"yandex-map__title\">АндерСон на Даче. ВДНХ.</div>\r\n    <div class=\"yandex-map__address\">ВВЦ, Проспект Мира, д. 119, с. 136</div>\r\n    <div class=\"yandex-map__phones\"><a href=\"tel:+74952219363\">+7 495-221-93-63</a><br><a href=\"tel:+74952219363\">+7 495-221-93-63</a></div><div class=\"yandex-map__emails\"><a href=\"mailto:cafe_vdnh@cafe-anderson.ru\">cafe_vdnh@cafe-anderson.ru</a>,<a href=\"mailto:cafe_vdnh@cafe-anderson.ru\">cafe_vdnh@cafe-anderson.ru</a></div></div>"
+	},
+	{
+		"id": "396",
+		"title": "АндерСон ЖК Шуваловский",
+		"position": ["55.701743303618", "37.512217224537"],
+		"content": "<div class=\"yandex-map__content\">\r\n    <div class=\"yandex-map__title\">АндерСон ЖК Шуваловский</div>\r\n    <div class=\"yandex-map__address\">Мичуринский проспект, д. 7, к. 1</div>\r\n    <div class=\"yandex-map__phones\"><a href=\"tel:+74952927324\">+7 495-292-73-24</a><br><a href=\"tel:+79851932754\">+7 985-193-27-54</a></div><div class=\"yandex-map__emails\"><a href=\"mailto:cafe_shuvalovskiy@cafe-anderson.ru\">cafe_shuvalovskiy@cafe-anderson.ru</a>,<a href=\"mailto:dir_shuvalovskiy@cafe-anderson.ru, cafe_shuvalovskiy@cafe-anderson.ru\">dir_shuvalovskiy@cafe-anderson.ru, cafe_shuvalovskiy@cafe-anderson.ru</a></div></div>"
+	},
+	{
+		"id": "400",
+		"title": "АндерСон на Кусковской",
+		"position": ["55.744360985095", "37.794384186508"],
+		"content": "<div class=\"yandex-map__content\">\r\n    <div class=\"yandex-map__title\">АндерСон на Кусковской</div>\r\n    <div class=\"yandex-map__address\">Кусковская, ул. 47</div>\r\n    <div class=\"yandex-map__phones\"><a href=\"tel:+74952219363\">+7 495-221-93-63</a><br><a href=\"tel:+74952219363\">+7 495-221-93-63</a></div><div class=\"yandex-map__emails\"><a href=\"mailto:cafe_kuskovskaya@cafe-anderson.ru\">cafe_kuskovskaya@cafe-anderson.ru</a>,<a href=\"mailto:cafe_kuskovskaya@cafe-anderson.ru\">cafe_kuskovskaya@cafe-anderson.ru</a></div></div>"
+	},
+	{
+		"id": "402",
+		"title": "АндерСон Медведково",
+		"position": ["55.886165970976", "37.70168185582"],
+		"content": "<div class=\"yandex-map__content\">\r\n    <div class=\"yandex-map__title\">АндерСон Медведково</div>\r\n    <div class=\"yandex-map__address\">ул. Стартовая, д. 9 к. 2</div>\r\n    <div class=\"yandex-map__phones\"><a href=\"tel:+79032379602\">+7 903-237-96-02</a><br><a href=\"tel:+74952219363\">+7 495-221-93-63</a></div><div class=\"yandex-map__emails\"><a href=\"mailto:cafe_startovaya@cafe-anderson.ru\">cafe_startovaya@cafe-anderson.ru</a>,<a href=\"mailto:cafe_startovaya@cafe-anderson.ru\">cafe_startovaya@cafe-anderson.ru</a></div></div>"
+	},
+	{
+		"id": "403",
+		"title": "АндерСон Гагаринский",
+		"position": ["55.744992049913", "37.598237428242"],
+		"content": "<div class=\"yandex-map__content\">\r\n    <div class=\"yandex-map__title\">АндерСон Гагаринский</div>\r\n    <div class=\"yandex-map__address\">Гагаринский переулок, д. 6</div>\r\n    <div class=\"yandex-map__phones\"><a href=\"tel:+74992716165\">+7 499-271-61-65</a><br><a href=\"tel:+79032385937\">+7 903-238-59-37</a></div><div class=\"yandex-map__emails\"><a href=\"mailto:cafe_gagarinsky@cafe-anderson.ru\">cafe_gagarinsky@cafe-anderson.ru</a>,<a href=\"mailto:cafe_gagarinsky@cafe-anderson.ru\">cafe_gagarinsky@cafe-anderson.ru</a></div></div>"
+	},
+	{
+		"id": "404",
+		"title": "АндерСон в Нижнем Новгороде",
+		"position": ["56.314442110211", "43.983269280718"],
+		"content": "<div class=\"yandex-map__content\">\r\n    <div class=\"yandex-map__title\">АндерСон в Нижнем Новгороде</div>\r\n    <div class=\"yandex-map__address\">ул. Малая Ямская, д. 18/5</div>\r\n    <div class=\"yandex-map__phones\"><a href=\"tel:+78312171715\">+7 831-217-17-15</a><br><a href=\"tel:+79302741755\">+7 930-274-17-55</a></div><div class=\"yandex-map__emails\"><a href=\"mailto:anderson_nn@cafe-anderson.ru \">anderson_nn@cafe-anderson.ru </a>,<a href=\"mailto:dir_nnovgorod@cafe-anderson.ru\">dir_nnovgorod@cafe-anderson.ru</a></div></div>"
+	},
+	{
+		"id": "408",
+		"title": "АндерСон в Московском",
+		"position": ["55.59565961485", "37.354568842129"],
+		"content": "<div class=\"yandex-map__content\">\r\n    <div class=\"yandex-map__title\">АндерСон в Московском</div>\r\n    <div class=\"yandex-map__address\">Московский, ул. Хабарова, дом 2, ТРЦ Новомосковский, вход со стороны пруда</div>\r\n    <div class=\"yandex-map__phones\"><a href=\"tel:+79858222449\">+7 985-822-24-49</a><br><a href=\"tel:+74952405779\">+7 495-240-57-79</a></div><div class=\"yandex-map__emails\"><a href=\"mailto:cafe_moskovsky@cafe-anderson.ru\">cafe_moskovsky@cafe-anderson.ru</a></div></div>"
+	},
+	{
+		"id": "411",
+		"title": "АндерСон Крылатское",
+		"position": ["55.746638226266", "37.421182436176"],
+		"content": "<div class=\"yandex-map__content\">\r\n    <div class=\"yandex-map__title\">АндерСон Крылатское</div>\r\n    <div class=\"yandex-map__address\">Рублевское шоссе, д.28, к.1</div>\r\n    <div class=\"yandex-map__phones\"><a href=\"tel:+79096585394\">+7 909-658-53-94</a><br><a href=\"tel:+79096498719\">+7 909-649-87-19</a></div><div class=\"yandex-map__emails\"><a href=\"mailto:cafe_krilatskoe@cafe-anderson.ru\">cafe_krilatskoe@cafe-anderson.ru</a>,<a href=\"mailto:cafe_krilatskoe@cafe-anderson.ru\">cafe_krilatskoe@cafe-anderson.ru</a></div></div>"
+	},
+	{
+		"id": "412",
+		"title": "АндерСон парк Царицыно",
+		"position": ["55.617960909027", "37.673315662041"],
+		"content": "<div class=\"yandex-map__content\">\r\n    <div class=\"yandex-map__title\">АндерСон парк Царицыно</div>\r\n    <div class=\"yandex-map__address\">ул. Тюрина, д. 1</div>\r\n    <div class=\"yandex-map__phones\"><a href=\"tel:+74952219363\">+7 495-221-93-63</a><br><a href=\"tel:+74952219363\">+7 495-221-93-63</a></div><div class=\"yandex-map__emails\"><a href=\"mailto:cafe_caricino@cafe-anderson.ru\">cafe_caricino@cafe-anderson.ru</a>,<a href=\"mailto:an.smirnov@cafe-anderson.ru\">an.smirnov@cafe-anderson.ru</a></div></div>"
+	},
+	{
+		"id": "414",
+		"title": "АндерСон в Тюмени",
+		"position": ["57.157005803395", "65.558892025131"],
+		"content": "<div class=\"yandex-map__content\">\r\n    <div class=\"yandex-map__title\">АндерСон в Тюмени</div>\r\n    <div class=\"yandex-map__address\">город Тюмень, ул. Осипенко, д.73</div>\r\n    <div class=\"yandex-map__phones\"><a href=\"tel:+73452568727\">+7 345-256-87-27</a><br></div><div class=\"yandex-map__emails\"><a href=\"mailto:cafe_tyumen@cafe-anderson.ru\">cafe_tyumen@cafe-anderson.ru</a></div></div>"
+	},
+	{
+		"id": "134309",
+		"title": "Андерсон Фили Град",
+		"position": ["55.755007872324", "37.509252754642"],
+		"content": "<div class=\"yandex-map__content\">\r\n    <div class=\"yandex-map__title\">Андерсон Фили Град</div>\r\n    <div class=\"yandex-map__address\">Береговой проезд 5А, к.7 ЖК «Фили Град»</div>\r\n    <div class=\"yandex-map__phones\"><a href=\"tel:+79175531089\">+7 917-553-10-89</a><br></div><div class=\"yandex-map__emails\"><a href=\"mailto:cafe_filigrad@cafe-anderson.ru\">cafe_filigrad@cafe-anderson.ru</a>,<a href=\"mailto:dir_filigrad@cafe-anderson.ru\">dir_filigrad@cafe-anderson.ru</a></div></div>"
+	},
+	{
+		"id": "151517",
+		"title": "АндерСон Пушкино",
+		"position": ["56.017043", "37.884664"],
+		"content": "<div class=\"yandex-map__content\">\r\n    <div class=\"yandex-map__title\">АндерСон Пушкино</div>\r\n    <div class=\"yandex-map__address\">г. Пушкино, Красноармейское шоссе, стр. 104, ТРЦ «Пушкино Парк», вход 1,  этаж 2</div>\r\n    <div class=\"yandex-map__phones\"><a href=\"tel:+79251843972\">+7 925-184-39-72</a><br></div><div class=\"yandex-map__emails\"><a href=\"mailto:s.kuznetsova@cafe-anderson.ru\">s.kuznetsova@cafe-anderson.ru</a>,<a href=\"mailto:dir_pushkino@cafe-anderson.ru\">dir_pushkino@cafe-anderson.ru</a></div></div>"
+	},
+	{
+		"id": "131807",
+		"title": "АндерСон Домодедово",
+		"position": ["55.437017270943", "37.765276884673"],
+		"content": "<div class=\"yandex-map__content\">\r\n    <div class=\"yandex-map__title\">АндерСон Домодедово</div>\r\n    <div class=\"yandex-map__address\">г. Домодедово, Каширское шоссе, д.42</div>\r\n    <div class=\"yandex-map__phones\"><a href=\"tel:+79258332517\">+7 925-833-25-17</a><br></div><div class=\"yandex-map__emails\"><a href=\"mailto:cafe_domodedovo@cafe-anderson.ru\">cafe_domodedovo@cafe-anderson.ru</a>,<a href=\"mailto:почта кафе\">почта кафе</a></div></div>"
+	},
+	{
+		"id": "120806",
+		"title": "АндерСон Таганская улица 36",
+		"position": ["55.73941817759", "37.666422825004"],
+		"content": "<div class=\"yandex-map__content\">\r\n    <div class=\"yandex-map__title\">АндерСон Таганская улица 36</div>\r\n    <div class=\"yandex-map__address\">ул. Таганская, д. 36, стр.1</div>\r\n    <div class=\"yandex-map__phones\"><a href=\"tel:+79057804195\">+7 905-780-41-95</a><br><a href=\"tel:+74951254924\">+7 495-125-49-24</a></div><div class=\"yandex-map__emails\"><a href=\"mailto:cafe_taganskaya36@cafe-anderson.ru\">cafe_taganskaya36@cafe-anderson.ru</a>,<a href=\"mailto:dir_taganka36@cafe-anderson.ru\">dir_taganka36@cafe-anderson.ru</a></div></div>"
+	},
+	{
+		"id": "158190",
+		"title": "АндерСон ТРК «FORT ЯСЕНЕВО»",
+		"position": ["55.60667", "37.536284"],
+		"content": "<div class=\"yandex-map__content\">\r\n    <div class=\"yandex-map__title\">АндерСон ТРК «FORT ЯСЕНЕВО»</div>\r\n    <div class=\"yandex-map__address\">Новоясеневский проспект, д.11</div>\r\n    <div class=\"yandex-map__phones\"><a href=\"tel:+79854320034\">+7 985-432-00-34</a><br></div><div class=\"yandex-map__emails\"><a href=\"mailto:dir_yasenevo@cafe-anderson.ru\">dir_yasenevo@cafe-anderson.ru</a>,<a href=\"mailto:cafe_yasenevo@cafe-anderson.ru\">cafe_yasenevo@cafe-anderson.ru</a></div></div>"
+	},
+	{
+		"id": "61949",
+		"title": "АндерСон Жулебино ТЦ «Динамит»",
+		"position": ["55.698911880465", "37.845000994663"],
+		"content": "<div class=\"yandex-map__content\">\r\n    <div class=\"yandex-map__title\">АндерСон Жулебино ТЦ «Динамит»</div>\r\n    <div class=\"yandex-map__address\">Жулебинский бульвар, д. 5 (ТЦ «Динамит»)</div>\r\n    <div class=\"yandex-map__phones\"><a href=\"tel:+79169907505\">+7 916-990-75-05</a><br><a href=\"tel:+74952528575\">+7 495-252-85-75</a></div><div class=\"yandex-map__emails\"><a href=\"mailto:cafe_julebino@cafe-anderson.ru\">cafe_julebino@cafe-anderson.ru</a>,<a href=\"mailto:cafe_julebino@cafe-anderson.ru\">cafe_julebino@cafe-anderson.ru</a></div></div>"
+	},
+	{
+		"id": "162341",
+		"title": "АндерСон Воронцовский парк",
+		"position": ["55.668452", "37.53384"],
+		"content": "<div class=\"yandex-map__content\">\r\n    <div class=\"yandex-map__title\">АндерСон Воронцовский парк</div>\r\n    <div class=\"yandex-map__address\">г. Москва, ул. Академика Пилюгина, 18</div>\r\n    <div class=\"yandex-map__phones\"><a href=\"tel:+79859754455\">+7 985-975-44-55</a><br></div><div class=\"yandex-map__emails\"><a href=\"mailto:marfin-76.85@mail.ru\">marfin-76.85@mail.ru</a>,<a href=\"mailto:marfin-76.85@mail.ru\">marfin-76.85@mail.ru</a></div></div>"
+	},
+	{
+		"id": "165560",
+		"title": "АндерСон Бутово",
+		"position": ["55.560866", "37.577939"],
+		"content": "<div class=\"yandex-map__content\">\r\n    <div class=\"yandex-map__title\">АндерСон Бутово</div>\r\n    <div class=\"yandex-map__address\">Феодосийская улица, 7к3 </div>\r\n    <div class=\"yandex-map__phones\"><a href=\"tel:+79037266340\">+7 903-726-63-40</a><br><a href=\"tel:+79037266340\">+7 903-726-63-40</a></div><div class=\"yandex-map__emails\"><a href=\"mailto:dir_butovo@cafe-anderson.ru\">dir_butovo@cafe-anderson.ru</a></div></div>"
+	},
+	{
+		"id": "162342",
+		"title": "АндерСон Галерея Аэропорт",
+		"position": ["55.801835", "37.532107"],
+		"content": "<div class=\"yandex-map__content\">\r\n    <div class=\"yandex-map__title\">АндерСон Галерея Аэропорт</div>\r\n    <div class=\"yandex-map__address\">Ленинградский проспект 62/А ( ТК Галерея Аэропорт)</div>\r\n    <div class=\"yandex-map__phones\"><a href=\"tel:+79854197022\">+7 985-419-70-22</a><br></div><div class=\"yandex-map__emails\"><a href=\"mailto:v.portnov@cafe-anderson.ru\">v.portnov@cafe-anderson.ru</a>,<a href=\"mailto:v.portnov@cafe-anderson.ru\">v.portnov@cafe-anderson.ru</a></div></div>"
+	},
+	{
+		"id": "167106",
+		"title": "Андерсон &quot;На бегу&quot; ТЦ Метрополис",
+		"position": ["55.823216", "37.497468"],
+		"content": "<div class=\"yandex-map__content\">\r\n    <div class=\"yandex-map__title\">Андерсон &quot;На бегу&quot; ТЦ Метрополис</div>\r\n    <div class=\"yandex-map__address\">г. Москва, Ленинградское шоссе, д.16А, строение 4</div>\r\n    <div class=\"yandex-map__phones\"><a href=\"tel:+79266745491\">+7 926-674-54-91</a><br></div><div class=\"yandex-map__emails\"><a href=\"mailto:v.portnov@cafe-anderson.ru\">v.portnov@cafe-anderson.ru</a>,<a href=\"mailto:dir_minicafe@cafe-anderson.ru\">dir_minicafe@cafe-anderson.ru</a></div></div>"
+	},
+	{
+		"id": "167364",
+		"title": "Кафе «На бегу» в ТЦ ОКЕАНИЯ",
+		"position": ["55.727932", "37.476169"],
+		"content": "<div class=\"yandex-map__content\">\r\n    <div class=\"yandex-map__title\">Кафе «На бегу» в ТЦ ОКЕАНИЯ</div>\r\n    <div class=\"yandex-map__address\">г. Москва, Кутузовский проспект, 57</div>\r\n    <div class=\"yandex-map__phones\"><a href=\"tel:+79854721453\">+7 985-472-14-53</a><br></div><div class=\"yandex-map__emails\"><a href=\"mailto:dir_minicafe@cafe-anderson.ru\">dir_minicafe@cafe-anderson.ru</a>,<a href=\"mailto:dir_minicafe@cafe-anderson.ru\">dir_minicafe@cafe-anderson.ru</a></div></div>"
+	},
+	{
+		"id": "162343",
+		"title": "АндерСон ТЦ Калужский",
+		"position": ["55.656275", "37.540598"],
+		"content": "<div class=\"yandex-map__content\">\r\n    <div class=\"yandex-map__title\">АндерСон ТЦ Калужский</div>\r\n    <div class=\"yandex-map__address\">г. Москва, Профсоюзная ул., 61А</div>\r\n    <div class=\"yandex-map__phones\"><a href=\"tel:+79167203886\">+7 916-720-38-86</a><br></div><div class=\"yandex-map__emails\"><a href=\"mailto:v.portnov@cafe-anderson.ru\">v.portnov@cafe-anderson.ru</a>,<a href=\"mailto:v.portnov@cafe-anderson.ru\">v.portnov@cafe-anderson.ru</a></div></div>"
+	}
+]
