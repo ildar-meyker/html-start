@@ -39,7 +39,12 @@ const pkg = require("./package.json");
 require("gulp-grunt")(gulp);
 
 var path = {
-	assets: ["src/fonts/**", "src/video/**", "src/data/**", "src/robots.txt"],
+	assets: [
+		"src/fonts/**/*",
+		"src/video/**/*",
+		"src/data/**/*",
+		"src/robots.txt",
+	],
 };
 
 gulp.task("create-config", function (cb) {
@@ -104,12 +109,6 @@ gulp.task("styles", function () {
 		.pipe(server.stream());
 });
 
-gulp.task("uploads", function () {
-	return gulp
-		.src("src/uploads/**", { base: "src/", since: gulp.lastRun("uploads") })
-		.pipe(gulp.dest("public/"));
-});
-
 /*----------  Assets  ----------*/
 gulp.task("images", function () {
 	return gulp
@@ -169,8 +168,7 @@ gulp.task("watch", function () {
 	);
 	gulp.watch("src/styles/**/*", gulp.series("sprite", "styles"));
 	gulp.watch("src/js/**/*", gulp.series("scripts", "reload"));
-	gulp.watch("src/images/**", gulp.series("images", "reload"));
-	gulp.watch("src/uploads/**", gulp.series("uploads", "reload"));
+	gulp.watch("src/images/**/*", gulp.series("images", "reload"));
 	gulp.watch(path.assets, gulp.series("copy", "reload"));
 });
 
@@ -203,7 +201,6 @@ gulp.task(
 		"grunt-assemble",
 		gulp.series("sprite", "styles"),
 		"images",
-		"uploads",
 		"scripts"
 	)
 );
