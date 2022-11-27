@@ -1,13 +1,12 @@
 "use strict";
 
-const isProduction = process.env.NODE_ENV == "production";
-
 const fs = require("fs");
 
 const webpack = require("webpack-stream");
 const compiler = require("webpack");
 
 const gulp = require("gulp");
+const { watch, series } = require("gulp");
 const gulpif = require("gulp-if");
 const sass = require("gulp-sass")(require("sass"));
 const less = require("gulp-less");
@@ -16,9 +15,10 @@ const postcss = require("gulp-postcss");
 const cleancss = require("gulp-clean-css");
 const filelist = require("gulp-filelist");
 const rename = require("gulp-rename");
-const spritesmith = require("gulp.spritesmith");
 const rsync = require("gulp-rsync");
 const zip = require("gulp-zip");
+const extender = require("gulp-html-extend");
+const cachebust = require("gulp-cache-bust");
 
 const server = require("browser-sync").create();
 const autoprefixer = require("autoprefixer");
@@ -47,6 +47,20 @@ var path = {
 	],
 };
 
+function renderHtml(path) {
+	const src = path || "./src/markup/*.html";
+
+	return gulp
+		.src(src)
+		.pipe(extender({ annotations: false, verbose: false }))
+		.pipe(cachebust({ type: "timestamp" }))
+		.pipe(gulp.dest("./public"));
+}
+
+gulp.task("templates", function () {
+	return renderHtml();
+});
+
 gulp.task("create-config", function (cb) {
 	const content = {
 		name: pkg.name,
@@ -62,14 +76,9 @@ gulp.task("create-config", function (cb) {
 
 gulp.task("filelist", function () {
 	return gulp
-		.src("src/templates/pages/*.hbs")
-		.pipe(
-			rename({
-				extname: ".html",
-			})
-		)
+		.src("src/markup/*.html")
 		.pipe(filelist("filelist.json", { flatten: true }))
-		.pipe(gulp.dest("public/"));
+		.pipe(gulp.dest("./public"));
 });
 
 /*----------  Scripts  ----------*/
@@ -112,64 +121,26 @@ gulp.task("styles", function () {
 /*----------  Assets  ----------*/
 gulp.task("images", function () {
 	return gulp
-		.src("src/images/**", { base: "src/", since: gulp.lastRun("images") })
-		.pipe(gulp.dest("public/"));
+		.src("src/images/**", { base: "src/" })
+		.pipe(gulp.dest("./public"));
 });
 
 gulp.task("copy", function () {
-	return gulp
-		.src(path.assets, { base: "src/", since: gulp.lastRun("copy") })
-		.pipe(gulp.dest("public/"));
-});
-
-gulp.task("sprite", function () {
-	return gulp
-		.src("src/images/sprite-png/*.png")
-		.pipe(
-			spritesmith({
-				padding: 20,
-				imgName: "sprite.png",
-				imgPath: "../images/sprite.png",
-				cssName: "sprite.scss",
-				retinaSrcFilter: "**/*@2x.png",
-				retinaImgName: "sprite@2x.png",
-				retinaImgPath: "../images/sprite@2x.png",
-				cssVarMap: function (sprite) {
-					var iconName;
-					var basePaths = ["/src/images/"];
-
-					var fullPath = sprite.source_image.replace(/\\/g, "/");
-
-					for (var i = 0; i < basePaths.length; i++) {
-						iconName = fullPath.split(basePaths[i])[1];
-						if (iconName) break;
-					}
-
-					iconName = iconName
-						.replace(/\//g, "-") // replace '/' by '-'
-						.replace(/(.+)\..+$/, "$1") // remove extensions
-						.replace(/-@2x/, ""); // remove '-@2x' part
-
-					sprite.name = "icon-" + iconName;
-				},
-			})
-		)
-		.pipe(
-			gulpif("*.png", gulp.dest("public/images/"), gulp.dest("temp/css/"))
-		);
+	return gulp.src(path.assets, { base: "src/" }).pipe(gulp.dest("./public"));
 });
 
 /*----------  Server  ----------*/
 
 gulp.task("watch", function () {
-	gulp.watch(
-		"src/templates/**/*",
-		gulp.series("filelist", "grunt-assemble", "reload")
-	);
-	gulp.watch("src/styles/**/*", gulp.series("sprite", "styles"));
-	gulp.watch("src/js/**/*", gulp.series("scripts", "reload"));
-	gulp.watch("src/images/**/*", gulp.series("images", "reload"));
-	gulp.watch(path.assets, gulp.series("copy", "reload"));
+	watch("./src/markup/*.html").on("change", (path) => {
+		renderHtml(path);
+		server.reload();
+	});
+
+	watch("./src/styles/**/*", { delay: 2000 }, series("styles"));
+	watch("./src/js/**/*", { delay: 2000 }, series("scripts", "reload"));
+	watch("./src/images/**/*", { delay: 2000 }, series("images", "reload"));
+	watch(path.assets, { delay: 2000 }, series("copy", "reload"));
 });
 
 gulp.task("reload", function (done) {
@@ -196,10 +167,9 @@ gulp.task(
 	"build",
 	gulp.parallel(
 		"copy",
-		"filelist",
 		"create-config",
-		"grunt-assemble",
-		gulp.series("sprite", "styles"),
+		"templates",
+		"styles",
 		"images",
 		"scripts"
 	)

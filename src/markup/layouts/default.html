@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 
@@ -6,23 +7,23 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	
-	<title> {{ title }}</title>
+	<!-- @@placeholder = title -->
 
-	<link rel="stylesheet" href="css/main.min.css?v={{moment unix=null}}">
+	<link rel="stylesheet" href="css/main.min.css">
 	
-	<script src="js/modernizr-output.js?v={{moment unix=null}}"></script>
+	<script src="js/modernizr-output.js"></script>
 </head>
 
 <body> 
 
-	{{> body }}
+	<!-- @@placeholder = content -->
 
 	<script src="https://api-maps.yandex.ru/2.1/?apikey=28814c4b-cb66-4cc3-8baa-48e067cad83a&lang=ru_RU"></script>
-	<script src="js/bundle.js?v={{moment unix=null}}"></script>
+	<script src="js/bundle.js"></script>
 
 	<div id="notify" class="notify"></div>
 
-	{{> filelist }}
+	<!-- @@include = ../partials/filelist.html -->
 </body>
 
 </html>

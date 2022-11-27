@@ -9,9 +9,9 @@
   "author": "",
   "scripts": {
     "start": "npm run dev",
-    "deploy": "gulp compress && gulp deploy && rm public/archive.zip",
-    "build": "export NODE_ENV=production gulp clean && grunt modernizr && gulp build",
-    "dev": "gulp clean && grunt modernizr && gulp build && gulp browser"
+    "build": "gulp clean && grunt modernizr && gulp build",
+    "dev": "gulp clean && grunt modernizr && gulp build && gulp browser",
+    "deploy": "gulp compress && gulp deploy && rm public/archive.zip"
   },
   "browserslist": [
     "defaults"
@@ -25,10 +25,9 @@
     "css-loader": "^6.5.1",
     "del": "^6.0.0",
     "grunt": "^1.4.1",
-    "grunt-assemble": "^0.6.3",
     "grunt-modernizr": "^3.0.2",
-    "grunt-responsive-images": "^1.10.1",
     "gulp": "^4.0.2",
+    "gulp-cache-bust": "^1.4.1",
     "gulp-clean-css": "^4.3.0",
     "gulp-filelist": "^2.0.5",
     "gulp-group-css-media-queries": "^1.2.2",
@@ -41,7 +40,6 @@
     "gulp-sass": "^5.1.0",
     "gulp-sourcemaps": "^3.0.0",
     "gulp-zip": "^5.1.0",
-    "gulp.spritesmith": "^6.12.1",
     "handlebars-helper-repeat": "~0.2.0",
     "node-sass-tilde-importer": "^1.0.2",
     "rimraf": "^3.0.2",
@@ -50,7 +48,8 @@
     "style-loader": "^3.3.1",
     "vinyl-named": "^1.1.0",
     "webpack": "^5.66.0",
-    "webpack-stream": "^7.0.0"
+    "webpack-stream": "^7.0.0",
+    "gulp-html-extend": "^1.1.6"
   },
   "dependencies": {
     "destyle.css": "^3.0.2",
