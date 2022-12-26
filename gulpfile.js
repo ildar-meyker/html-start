@@ -19,33 +19,36 @@ const rsync = require("gulp-rsync");
 const zip = require("gulp-zip");
 const extender = require("gulp-html-extend");
 const cachebust = require("gulp-cache-bust");
+const notify = require("gulp-notify");
 
 const server = require("browser-sync").create();
 const autoprefixer = require("autoprefixer");
 const del = require("del");
+const clc = require("cli-color");
 
 const pkg = require("./package.json");
 
-// if (pkg.name === "project-name") {
-// 	throw new Error(
-// 		"Project has a default name. Change it first in package.json."
-// 	);
-// }
+if (pkg.name === "project-name") {
+	console.log(
+		clc.yellow(
+			"Warning! Project has a default name. Change it in package.json"
+		)
+	);
+}
 
-// if (pkg.repository.url === "") {
-// 	throw new Error("The repository url is not specified.");
-// }
+if (pkg.repository.url === "") {
+	console.log(clc.yellow("Warning! The repository url is not specified"));
+}
 
 require("gulp-grunt")(gulp);
 
-var path = {
-	assets: [
-		"src/fonts/**/*",
-		"src/video/**/*",
-		"src/data/**/*",
-		"src/robots.txt",
-	],
-};
+const assets = [
+	"src/img/**",
+	"src/fonts/**/*",
+	"src/video/**/*",
+	"src/data/**/*",
+	"src/robots.txt",
+];
 
 function renderHtml(path) {
 	const src = path || "./src/markup/*.html";
@@ -54,7 +57,18 @@ function renderHtml(path) {
 		.src(src)
 		.pipe(extender({ annotations: false, verbose: false }))
 		.pipe(cachebust({ type: "timestamp" }))
-		.pipe(gulp.dest("./public"));
+		.pipe(gulp.dest("./public"))
+		.pipe(
+			notify({
+				title: "Layout updated!",
+			})
+		);
+}
+
+function copyAssets(path) {
+	const src = path || assets;
+
+	return gulp.src(src, { base: "src/" }).pipe(gulp.dest("./public"));
 }
 
 gulp.task("templates", function () {
@@ -87,7 +101,12 @@ gulp.task("scripts", function () {
 	return gulp
 		.src("src/js/main.js")
 		.pipe(webpack(require("./webpack.config.js"), compiler))
-		.pipe(gulp.dest("public/js/"));
+		.pipe(gulp.dest("public/js/"))
+		.pipe(
+			notify({
+				title: "Scripts updated!",
+			})
+		);
 });
 
 /*----------  Styles  ----------*/
@@ -115,18 +134,18 @@ gulp.task("styles", function () {
 		)
 		.pipe(sourcemaps.write("."))
 		.pipe(gulp.dest("public/css/"))
-		.pipe(server.stream());
+		.pipe(server.stream())
+		.pipe(
+			notify({
+				title: "Styles updated!",
+			})
+		);
 });
 
 /*----------  Assets  ----------*/
-gulp.task("images", function () {
-	return gulp
-		.src("src/images/**", { base: "src/" })
-		.pipe(gulp.dest("./public"));
-});
 
 gulp.task("copy", function () {
-	return gulp.src(path.assets, { base: "src/" }).pipe(gulp.dest("./public"));
+	return copyAssets();
 });
 
 /*----------  Server  ----------*/
@@ -137,10 +156,12 @@ gulp.task("watch", function () {
 		server.reload();
 	});
 
+	watch(assets, { delay: 500 })
+		.on("add", copyAssets)
+		.on("change", copyAssets);
+
 	watch("./src/styles/**/*", { delay: 2000 }, series("styles"));
 	watch("./src/js/**/*", { delay: 2000 }, series("scripts", "reload"));
-	watch("./src/images/**/*", { delay: 2000 }, series("images", "reload"));
-	watch(path.assets, { delay: 2000 }, series("copy", "reload"));
 });
 
 gulp.task("reload", function (done) {
@@ -165,14 +186,7 @@ gulp.task("clean", function () {
 
 gulp.task(
 	"build",
-	gulp.parallel(
-		"copy",
-		"create-config",
-		"templates",
-		"styles",
-		"images",
-		"scripts"
-	)
+	gulp.parallel("copy", "create-config", "templates", "styles", "scripts")
 );
 
 /*----------  Deploy  ----------*/
@@ -184,6 +198,12 @@ gulp.task("compress", function () {
 });
 
 gulp.task("deploy", function () {
+	if (pkg.name === "project-name") {
+		throw new Error(
+			clc.red("Project has a default name. Change it in package.json")
+		);
+	}
+
 	return gulp.src("public/**").pipe(
 		rsync({
 			root: "public/",
