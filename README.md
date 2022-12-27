@@ -1,10 +1,10 @@
-Выполнить в папке проекта:
+Как запустить:
 
 -   npm install
 -   npm run start
 
 Доступно:
 
--   npm run watch (то же самое, что npm run start, запустится c флагом --development)
--   npm run build (без вотчера, запустится c флагом --production)
--   npm run push (заливает на сервер, запустится c флагом --production)
+-   npm run watch (для разработки, запустится c флагом --development)
+-   npm run build (для билда без вотчера, запустится c флагом --production)
+-   npm run push (для деплоя, запустится c флагом --production)
