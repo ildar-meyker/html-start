@@ -54,10 +54,6 @@
     "webpack-stream": "^7.0.0"
   },
   "dependencies": {
-    "destyle.css": "^3.0.2",
-    "howler": "^2.2.3",
-    "jquery": "^3.6.0",
-    "slick-carousel": "^1.8.1",
     "swiper": "^7.4.1"
   }
 }
