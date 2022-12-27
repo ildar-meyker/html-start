@@ -5,10 +5,6 @@
 
 Доступно:
 
--   npm run dev (то же самое, что npm run start)
--   npm run build (без вотчера)
--   npm run deploy (заливает на сервер)
-
-Отдельно:
-
--   npx gulp filelist
+-   npm run watch (то же самое, что npm run start, запустится c флагом --development)
+-   npm run build (без вотчера, запустится c флагом --production)
+-   npm run push (заливает на сервер, запустится c флагом --production)

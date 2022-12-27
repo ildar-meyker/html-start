@@ -1,3 +1,8 @@
+/*
+TODO LIST:
+- вынести pagelist в отдельный подключаемый скрипт
+*/
+
 "use strict";
 
 const fs = require("fs");
@@ -5,8 +10,6 @@ const fs = require("fs");
 const webpack = require("webpack-stream");
 const compiler = require("webpack");
 
-const gulp = require("gulp");
-const { watch, series } = require("gulp");
 const gulpif = require("gulp-if");
 const sass = require("gulp-sass")(require("sass"));
 const less = require("gulp-less");
@@ -27,37 +30,53 @@ const del = require("del");
 const clc = require("cli-color");
 
 const pkg = require("./package.json");
+const { series, parallel, src, dest, watch } = require("gulp");
+
+const logWarning = (message) => {
+	console.log(clc.yellow(message));
+};
+const logSuccess = (message) => {
+	console.log(clc.green(message));
+};
+const logError = (message) => {
+	console.log(clc.red(message));
+};
 
 if (pkg.name === "project-name") {
-	console.log(
-		clc.yellow(
-			"Warning! Project has a default name. Change it in package.json"
-		)
+	logWarning(
+		"Warning! Project has a default name. Change it in package.json"
 	);
 }
 
 if (pkg.repository.url === "") {
-	console.log(clc.yellow("Warning! The repository url is not specified"));
+	logWarning("Warning! The repository url is not specified");
 }
 
-require("gulp-grunt")(gulp);
-
 const assets = [
-	"src/img/**",
-	"src/fonts/**/*",
-	"src/video/**/*",
-	"src/data/**/*",
-	"src/robots.txt",
+	"./src/img/**",
+	"./src/fonts/**/*",
+	"./src/video/**/*",
+	"./src/data/**/*",
+	"./src/robots.txt",
 ];
 
-function renderHtml(path) {
-	const src = path || "./src/markup/*.html";
+function clean(cb) {
+	return del("./public/");
+}
 
-	return gulp
-		.src(src)
+function buildAssets(cb, path) {
+	const source = path || assets;
+
+	return src(source, { base: "src/" }).pipe(dest("./public"));
+}
+
+function buildHtml(cb, path) {
+	const source = path || "./src/markup/*.html";
+
+	return src(source)
 		.pipe(extender({ annotations: false, verbose: false }))
 		.pipe(cachebust({ type: "timestamp" }))
-		.pipe(gulp.dest("./public"))
+		.pipe(dest("./public"))
 		.pipe(
 			notify({
 				title: "Layout updated!",
@@ -65,55 +84,8 @@ function renderHtml(path) {
 		);
 }
 
-function copyAssets(path) {
-	const src = path || assets;
-
-	return gulp.src(src, { base: "src/" }).pipe(gulp.dest("./public"));
-}
-
-gulp.task("templates", function () {
-	return renderHtml();
-});
-
-gulp.task("create-config", function (cb) {
-	const content = {
-		name: pkg.name,
-		repository: {
-			url: pkg.repository.url,
-		},
-	};
-
-	fs.writeFile("./public/config.json", JSON.stringify(content), cb);
-});
-
-/*----------  Filelist  ----------*/
-
-gulp.task("filelist", function () {
-	return gulp
-		.src("src/markup/*.html")
-		.pipe(filelist("filelist.json", { flatten: true }))
-		.pipe(gulp.dest("./public"));
-});
-
-/*----------  Scripts  ----------*/
-
-gulp.task("scripts", function () {
-	return gulp
-		.src("src/js/main.js")
-		.pipe(webpack(require("./webpack.config.js"), compiler))
-		.pipe(gulp.dest("public/js/"))
-		.pipe(
-			notify({
-				title: "Scripts updated!",
-			})
-		);
-});
-
-/*----------  Styles  ----------*/
-
-gulp.task("styles", function () {
-	return gulp
-		.src(["src/styles/*.*", "!src/styles/_*.*"])
+function buildStyles(cb) {
+	return src(["src/styles/*.*", "!src/styles/_*.*"])
 		.pipe(
 			gulpif(
 				"*.scss",
@@ -124,7 +96,7 @@ gulp.task("styles", function () {
 		)
 		.pipe(gulpif("*.less", less()))
 		.pipe(postcss([autoprefixer()]))
-		.pipe(gulp.dest("public/css/"))
+		.pipe(dest("public/css/"))
 		.pipe(sourcemaps.init())
 		.pipe(cleancss())
 		.pipe(
@@ -133,78 +105,92 @@ gulp.task("styles", function () {
 			})
 		)
 		.pipe(sourcemaps.write("."))
-		.pipe(gulp.dest("public/css/"))
+		.pipe(dest("public/css/"))
 		.pipe(server.stream())
 		.pipe(
 			notify({
 				title: "Styles updated!",
 			})
 		);
-});
+}
 
-/*----------  Assets  ----------*/
+function buildScripts(cb) {
+	return src("src/js/main.js")
+		.pipe(webpack(require("./webpack.config.js"), compiler))
+		.pipe(dest("public/js/"))
+		.pipe(
+			notify({
+				title: "Scripts updated!",
+			})
+		);
+}
 
-gulp.task("copy", function () {
-	return copyAssets();
-});
+// required for pagelist
+function buildConfig(cb) {
+	const content = {
+		name: pkg.name,
+		repository: {
+			url: pkg.repository.url,
+		},
+	};
 
-/*----------  Server  ----------*/
+	fs.writeFile("./public/config.json", JSON.stringify(content), cb);
+}
 
-gulp.task("watch", function () {
-	watch("./src/markup/*.html").on("change", (path) => {
-		renderHtml(path);
+// required for pagelist
+function buildPagelist(cb) {
+	return src("src/markup/*.html")
+		.pipe(filelist("pagelist.json", { flatten: true }))
+		.pipe(dest("./public"));
+}
+
+function watchFiles(cb) {
+	watch("./src/markup/*.html", { delay: 2000 }).on("change", (path) => {
+		buildHtml(null, path);
 		server.reload();
 	});
+	watch(assets, { delay: 2000 })
+		.on("add", (path) => {
+			logSuccess(`File ${path} was added`);
+			buildAssets(null, path);
+			server.reload();
+		})
+		.on("change", (path) => {
+			logSuccess(`File ${path} was updated`);
+			buildAssets(null, path);
+			server.reload();
+		});
+	watch("./src/styles/**/*", { delay: 2000 }, series(buildStyles));
+	watch(
+		"./src/js/**/*",
+		{ delay: 2000 },
+		series(buildScripts, () => {
+			server.reload();
+		})
+	);
+}
 
-	watch(assets, { delay: 500 })
-		.on("add", copyAssets)
-		.on("change", copyAssets);
-
-	watch("./src/styles/**/*", { delay: 2000 }, series("styles"));
-	watch("./src/js/**/*", { delay: 2000 }, series("scripts", "reload"));
-});
-
-gulp.task("reload", function (done) {
-	server.reload();
-	done();
-});
-
-gulp.task("server", function () {
+function runServer(cb) {
 	server.init({
 		server: {
 			baseDir: "public/",
 		},
 	});
-});
+	cb();
+}
 
-gulp.task("browser", gulp.parallel("server", "watch"));
+function compress(cb) {
+	return src("./public/**").pipe(zip("archive.zip")).pipe(dest("./public/"));
+}
 
-/*----------  Build  ----------*/
-gulp.task("clean", function () {
-	return del("public/");
-});
-
-gulp.task(
-	"build",
-	gulp.parallel("copy", "create-config", "templates", "styles", "scripts")
-);
-
-/*----------  Deploy  ----------*/
-gulp.task("compress", function () {
-	return gulp
-		.src("./public/**")
-		.pipe(zip("archive.zip"))
-		.pipe(gulp.dest("./public/"));
-});
-
-gulp.task("deploy", function () {
+function deploy(cb) {
 	if (pkg.name === "project-name") {
 		throw new Error(
 			clc.red("Project has a default name. Change it in package.json")
 		);
 	}
 
-	return gulp.src("public/**").pipe(
+	return src("./public/**").pipe(
 		rsync({
 			root: "public/",
 			hostname: "ildar-meyker.ru",
@@ -214,4 +200,16 @@ gulp.task("deploy", function () {
 				"/",
 		})
 	);
-});
+}
+
+const buildAll = series(
+	parallel(buildAssets, buildHtml, buildStyles, buildScripts),
+	buildPagelist,
+	buildConfig
+);
+
+const browse = parallel(runServer, watchFiles);
+
+exports.watch = series(clean, buildAll, browse);
+exports.build = series(clean, buildAll);
+exports.push = series(clean, buildAll, compress, deploy);

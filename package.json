@@ -8,10 +8,11 @@
   "description": "",
   "author": "",
   "scripts": {
-    "start": "npm run dev",
-    "build": "gulp clean && grunt modernizr && gulp build",
-    "dev": "gulp clean && grunt modernizr && gulp build && gulp browser",
-    "deploy": "gulp compress && gulp deploy && rm public/archive.zip"
+    "start": "npm run watch",
+    "dev": "npm run watch",
+    "watch": "gulp watch --development",
+    "build": "gulp build --production",
+    "push": "gulp push --production && rm public/archive.zip"
   },
   "browserslist": [
     "defaults"
@@ -32,7 +33,6 @@
     "gulp-clean-css": "^4.3.0",
     "gulp-filelist": "^2.0.5",
     "gulp-group-css-media-queries": "^1.2.2",
-    "gulp-grunt": "^0.5.5",
     "gulp-html-extend": "^1.1.6",
     "gulp-if": "^3.0.0",
     "gulp-less": "^5.0.0",
