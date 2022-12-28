@@ -23,6 +23,8 @@ const zip = require("gulp-zip");
 const extender = require("gulp-html-extend");
 const cachebust = require("gulp-cache-bust");
 const notify = require("gulp-notify");
+const htmlclean = require("gulp-htmlclean");
+const replace = require("gulp-replace");
 
 const server = require("browser-sync").create();
 const autoprefixer = require("autoprefixer");
@@ -41,6 +43,8 @@ const logSuccess = (message) => {
 const logError = (message) => {
 	console.log(clc.red(message));
 };
+
+const production = process.env.NODE_ENV === "production";
 
 if (pkg.name === "project-name") {
 	logWarning(
@@ -76,6 +80,13 @@ function buildHtml(cb, path) {
 	return src(source)
 		.pipe(extender({ annotations: false, verbose: false }))
 		.pipe(cachebust({ type: "timestamp" }))
+		.pipe(gulpif(production, htmlclean()))
+		.pipe(
+			gulpif(
+				production,
+				replace(/css\/([a-z_-]+).css/g, "css/$1.min.css")
+			)
+		)
 		.pipe(dest("./public"))
 		.pipe(
 			notify({
@@ -86,6 +97,7 @@ function buildHtml(cb, path) {
 
 function buildStyles(cb) {
 	return src(["src/styles/*.*", "!src/styles/_*.*"])
+		.pipe(gulpif(production, sourcemaps.init()))
 		.pipe(
 			gulpif(
 				"*.scss",
@@ -97,15 +109,17 @@ function buildStyles(cb) {
 		.pipe(gulpif("*.less", less()))
 		.pipe(postcss([autoprefixer()]))
 		.pipe(dest("public/css/"))
-		.pipe(sourcemaps.init())
-		.pipe(cleancss())
+		.pipe(gulpif(production, cleancss()))
 		.pipe(
-			rename({
-				suffix: ".min",
-			})
+			gulpif(
+				production,
+				rename({
+					suffix: ".min",
+				})
+			)
 		)
-		.pipe(sourcemaps.write("."))
-		.pipe(dest("public/css/"))
+		.pipe(gulpif(production, sourcemaps.write(".")))
+		.pipe(gulpif(production, dest("public/css/")))
 		.pipe(server.stream())
 		.pipe(
 			notify({
@@ -153,21 +167,24 @@ function watchFiles(cb) {
 		.on("add", (path) => {
 			logSuccess(`File ${path} was added`);
 			buildAssets(null, path);
-			server.reload();
+			reload(cb);
 		})
 		.on("change", (path) => {
 			logSuccess(`File ${path} was updated`);
 			buildAssets(null, path);
-			server.reload();
+			reload(cb);
 		});
 	watch("./src/styles/**/*", { delay: 2000 }, series(buildStyles));
 	watch(
 		"./src/js/**/*",
 		{ delay: 2000 },
-		series(buildScripts, () => {
-			server.reload();
-		})
+		series(buildScripts, reload)
 	);
+}
+
+function reload(cb) {
+	server.reload();
+	cb();
 }
 
 function runServer(cb) {
