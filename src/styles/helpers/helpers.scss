@@ -1,0 +1,88 @@
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-uppercase {
+    text-transform: uppercase;
+}
+
+.text-white {
+    color: #fff;
+}
+
+.d-block {
+    display: block !important;
+}
+
+.d-none {
+    display: block !important;
+}
+
+.mb-0 {
+    margin-bottom: 0 !important;
+}
+
+.mt-0 {
+    margin-top: 0 !important;
+}
+
+.w-100 {
+    width: 100%;
+} 
+
+
+.link-area {
+    @include fill;
+}
+
+.nice-link {
+    background-image: linear-gradient(currentColor,currentColor);
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    background-size: 0 1px;
+    transition: background-size .25s ease-out,color .2s;
+   
+    &:hover {
+        background-size: 100% 1px;
+    }
+
+    &--active {
+        background-size: 100% 1px;
+
+        &:hover {
+            background-size: 0 1px;
+        }
+    }
+}
+
+.edge-area {
+    width: 10%;
+    max-width: 70px;
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    height: 100%;
+    display: none;
+    pointer-events: none;
+
+    &.active {
+        display: block;
+    }
+
+    &--l {
+        background: linear-gradient(to right, #fff, rgba(#fff, 0));
+    }
+
+    &--r {
+        background: linear-gradient(to left, #fff, rgba(#fff, 0));
+        left: auto;
+        right: 0;
+    }
+}
