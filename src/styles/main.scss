@@ -1,7 +1,11 @@
-@import './helpers/mixins.scss';
-@import './helpers/helpers.scss';
+@import "./helpers/mixins.scss";
+@import "./helpers/helpers.scss";
 
 body {
     text-size-adjust: none;
     min-width: 320px;
+}
+
+img[data-src] {
+    visibility: hidden;
 }

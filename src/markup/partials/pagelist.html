@@ -1,191 +1,204 @@
 <style type="text/css">
-	.pagelist {
-		position: absolute;
-		z-index: 999999;
-		top: 0;
-		left: 0;
-		font-size: 18px;
-		color: #fff;
-	}
+    .pagelist {
+        position: absolute;
+        z-index: 999999;
+        top: 0;
+        left: 0;
+        font-size: 18px;
+        color: #fff;
+    }
 
-	.pagelist a {
-		text-decoration: none;
-	}
+    .pagelist a {
+        text-decoration: none;
+    }
 
-	.pagelist._hidden {
-		display: none;
-	}
+    .pagelist._hidden {
+        display: none;
+    }
 
-	.pagelist._active .pagelist__body {
-		display: block;
-	}
+    .pagelist._active .pagelist__body {
+        display: block;
+    }
 
-	.pagelist span {
-		display: inline-block;
-		padding: 9px 20px;
-		background: #000;
-	}
+    .pagelist span {
+        display: inline-block;
+        padding: 9px 20px;
+        background: #000;
+    }
 
-	.pagelist__body {
-		display: none;
-		background: #000;
-	}
+    .pagelist__body {
+        display: none;
+        background: #000;
+    }
 
-	.pagelist__nav {
-		border-top: 1px dashed rgba(255, 255, 255, .2);
-		padding: 9px 0;
-	}
+    .pagelist__nav {
+        border-top: 1px dashed rgba(255, 255, 255, 0.2);
+        padding: 9px 0;
+    }
 
-	.pagelist__tip {
-		border-top: 1px dashed rgba(255, 255, 255, .2);
-		padding: 20px;
-		font-size: 12px;
-		line-height: 1.4;
-	}
+    .pagelist__tip {
+        border-top: 1px dashed rgba(255, 255, 255, 0.2);
+        padding: 20px;
+        font-size: 12px;
+        line-height: 1.4;
+    }
 
-	.pagelist__text {
-		max-width: 200px;
-	}
+    .pagelist__text {
+        max-width: 200px;
+    }
 
-	.pagelist__nav:first-child {
-		border-top: 0;
-	}
+    .pagelist__nav:first-child {
+        border-top: 0;
+    }
 
-	.pagelist__nav a {
-		display: block;
-		padding: 9px 20px;
-		color: #fff !important;
-	}
+    .pagelist__nav a {
+        display: block;
+        padding: 9px 20px;
+        color: #fff !important;
+    }
 
-	.pagelist__nav a:hover {
-		background: #fff;
-		color: #000 !important;
-	}
+    .pagelist__nav a:hover {
+        background: #fff;
+        color: #000 !important;
+    }
 
-	.pagelist__nav .pagelist__zip {
-		background: #5c905a;
-		color: #fff !important;
-	}
+    .pagelist__nav .pagelist__zip {
+        background: #5c905a;
+        color: #fff !important;
+    }
 
-	.pagelist__nav .pagelist__zip:hover {
-		background: #6ca86a;
-		color: #fff !important;
-	}
+    .pagelist__nav .pagelist__zip:hover {
+        background: #6ca86a;
+        color: #fff !important;
+    }
 
-	.pagelist__nav .pagelist__repo {
-		background: #03a9f4;
-		color: #fff !important;
-	}
+    .pagelist__nav .pagelist__repo {
+        background: #03a9f4;
+        color: #fff !important;
+    }
 
-	.pagelist__nav .pagelist__repo:hover {
-		background: #26bafd;
-		color: #fff !important;
-	}
+    .pagelist__nav .pagelist__repo:hover {
+        background: #26bafd;
+        color: #fff !important;
+    }
 </style>
 
 <script type="text/javascript">
+    (function () {
+        var Pagelist = {
+            createHtml: function () {
+                $.getJSON("config.json", function (config) {
+                    var $pagelist = $(
+                            '<div class="pagelist" id="pagelist">' +
+                                "<span></span>" +
+                                '<div class="pagelist__body">' +
+                                '<div class="pagelist__nav">' +
+                                '<a href="http://ildar-meyker.ru/html/' +
+                                config.name +
+                                '/archive.zip" target="_blank" class="pagelist__zip">Скачать архив</a>' +
+                                '<a href="' +
+                                config.repository.url +
+                                '" target="_blank" class="pagelist__repo">Репозиторий</a>' +
+                                '<a href="#" class="js-pagelist-hide">Скрыть</a>' +
+                                "</div>" +
+                                '<div class="pagelist__tip">' +
+                                '<div class="pagelist__text">' +
+                                "Можно щелкнуть мышкой дважды в любом месте, " +
+                                "чтобы скрыть или показать." +
+                                "</div>" +
+                                "</div>" +
+                                "</div>" +
+                                "</div>"
+                        ),
+                        $label = $pagelist.find("span"),
+                        $body = $pagelist.find(".pagelist__body");
 
-	(function () {
+                    $.ajax("pagelist.json", { cache: false })
+                        .done(function (data) {
+                            $label.text("Pages count: " + data.length);
 
-		var Pagelist = {
+                            var $pages = $('<div class="pagelist__nav"></div>');
+                            data.forEach(function (filename) {
+                                $(
+                                    '<a href="' +
+                                        filename +
+                                        '">' +
+                                        filename +
+                                        "</a>"
+                                ).appendTo($pages);
+                            });
+                            $pages.prependTo($body);
+                        })
+                        .fail(function () {
+                            $label.text("Pagelist failed.");
+                        })
+                        .always(function () {
+                            $pagelist.appendTo($("body"));
+                        });
+                });
+            },
 
-			createHtml: function () {
+            _handleSpanClick: function (e) {
+                var self = e.data.self;
 
-				$.getJSON('config.json', function (config) {
-					
-					var $pagelist = $('<div class="pagelist" id="pagelist">' +
-						'<span></span>' +
-						'<div class="pagelist__body">' +
-						'<div class="pagelist__nav">' +
-						'<a href="http://ildar-meyker.ru/html/' + config.name + '/archive.zip" target="_blank" class="pagelist__zip">Скачать архив</a>' +
-						'<a href="' + config.repository.url +'" target="_blank" class="pagelist__repo">Репозиторий</a>' +
-						'<a href="#" class="js-pagelist-hide">Скрыть</a>' +
-						'</div>' +
-						'<div class="pagelist__tip">' +
-						'<div class="pagelist__text">' +
-						'Можно щелкнуть мышкой дважды в любом месте, ' +
-						'чтобы скрыть или показать.' +
-						'</div>' +
-						'</div>' +
-						'</div>' +
-						'</div>'),
+                $("#pagelist").toggleClass("_active");
+            },
 
-						$label = $pagelist.find('span'),
+            _handleDocumentClick: function (e) {
+                var self = e.data.self;
 
-						$body = $pagelist.find('.pagelist__body');
+                if ($(e.target).closest(".pagelist").length > 0) return;
+                $("#pagelist").removeClass("_active");
+            },
 
-					$.ajax('pagelist.json', { cache: false })
-						.done(function (data) {
-							$label.text('Pages count: ' + data.length);
+            _handleDoubleClick: function (e) {
+                var self = e.data.self;
 
-							var $pages = $('<div class="pagelist__nav"></div>');
-							data.forEach(function (filename) {
-								$('<a href="' + filename + '">' +
-									filename +
-									'</a>').appendTo($pages);
-							});
-							$pages.prependTo($body);
-						})
-						.fail(function () {
-							$label.text('Pagelist failed.');
-						})
-						.always(function () {
-							$pagelist.appendTo($('body'));
-						});
-						
-				});
+                $("#pagelist").toggleClass("_hidden");
+            },
 
-				
+            _handleHideClick: function (e) {
+                var self = e.data.self;
 
-			},
+                $("#pagelist").addClass("_hidden");
+            },
 
-			_handleSpanClick: function (e) {
-				var self = e.data.self;
+            _bindUI: function () {
+                var self = this;
 
-				$('#pagelist').toggleClass('_active');
-			},
+                $(document).on(
+                    "dblclick",
+                    { self: self },
+                    self._handleDoubleClick
+                );
+                $(document).on(
+                    "click",
+                    ".js-pagelist-hide",
+                    { self: self },
+                    self._handleHideClick
+                );
+                $(document).on(
+                    "click",
+                    ".pagelist > span",
+                    { self: self },
+                    self._handleSpanClick
+                );
+                $(document).on(
+                    "click",
+                    { self: self },
+                    self._handleDocumentClick
+                );
+            },
 
-			_handleDocumentClick: function (e) {
-				var self = e.data.self;
+            init: function () {
+                var self = this;
 
-				if ($(e.target).closest('.pagelist').length > 0) return;
-				$('#pagelist').removeClass('_active');
-			},
+                self._bindUI();
 
-			_handleDoubleClick: function (e) {
-				var self = e.data.self;
+                self.createHtml();
+            },
+        };
 
-				$('#pagelist').toggleClass('_hidden');
-			},
-
-			_handleHideClick: function (e) {
-				var self = e.data.self;
-
-				$('#pagelist').addClass('_hidden');
-			},
-
-			_bindUI: function () {
-				var self = this;
-
-				$(document).on('dblclick', { self: self }, self._handleDoubleClick);
-				$(document).on('click', '.js-pagelist-hide', { self: self }, self._handleHideClick);
-				$(document).on('click', '.pagelist > span', { self: self }, self._handleSpanClick);
-				$(document).on('click', { self: self }, self._handleDocumentClick);
-			},
-
-			init: function () {
-				var self = this;
-
-				self._bindUI();
-
-				self.createHtml();
-
-			}
-
-		};
-
-		Pagelist.init();
-
-	}());
-
+        Pagelist.init();
+    })();
 </script>

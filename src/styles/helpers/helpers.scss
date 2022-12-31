@@ -34,20 +34,19 @@
 
 .w-100 {
     width: 100%;
-} 
-
+}
 
 .link-area {
     @include fill;
 }
 
 .nice-link {
-    background-image: linear-gradient(currentColor,currentColor);
+    background-image: linear-gradient(currentColor, currentColor);
     background-position: 0 100%;
     background-repeat: no-repeat;
     background-size: 0 1px;
-    transition: background-size .25s ease-out,color .2s;
-   
+    transition: background-size 0.25s ease-out, color 0.2s;
+
     &:hover {
         background-size: 100% 1px;
     }
