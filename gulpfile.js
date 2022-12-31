@@ -7,8 +7,8 @@ TODO LIST:
 
 const fs = require("fs");
 
-const webpack = require("webpack-stream");
-const compiler = require("webpack");
+const webpackStream = require("webpack-stream");
+const webpack4 = require("webpack");
 
 const gulpif = require("gulp-if");
 const sass = require("gulp-sass")(require("sass"));
@@ -35,194 +35,193 @@ const pkg = require("./package.json");
 const { series, parallel, src, dest, watch } = require("gulp");
 
 const logWarning = (message) => {
-	console.log(clc.yellow(message));
+    console.log(clc.yellow(message));
 };
 const logSuccess = (message) => {
-	console.log(clc.green(message));
+    console.log(clc.green(message));
 };
 const logError = (message) => {
-	console.log(clc.red(message));
+    console.log(clc.red(message));
 };
 
 const production = process.env.NODE_ENV === "production";
 
 if (pkg.name === "project-name") {
-	logWarning(
-		"Warning! Project has a default name. Change it in package.json"
-	);
+    logWarning(
+        "Warning! Project has a default name. Change it in package.json"
+    );
 }
 
 if (pkg.repository.url === "") {
-	logWarning("Warning! The repository url is not specified");
+    logWarning("Warning! The repository url is not specified");
 }
 
 const assets = [
-	"./src/img/**",
-	"./src/fonts/**/*",
-	"./src/video/**/*",
-	"./src/data/**/*",
-	"./src/robots.txt",
+    "./src/img/**",
+    "./src/fonts/**/*",
+    "./src/video/**/*",
+    "./src/data/**/*",
+    "./src/robots.txt",
 ];
 
 function clean(cb) {
-	return del("./public/");
+    return del("./public/");
 }
 
 function buildAssets(cb, path) {
-	const source = path || assets;
+    const source = path || assets;
 
-	return src(source, { base: "src/" }).pipe(dest("./public"));
+    return src(source, { base: "src/" }).pipe(dest("./public"));
 }
 
 function buildHtml(cb, path) {
-	const source = path || "./src/markup/*.html";
+    const source = path || "./src/markup/*.html";
 
-	return src(source)
-		.pipe(extender({ annotations: false, verbose: false }))
-		.pipe(cachebust({ type: "timestamp" }))
-		.pipe(gulpif(production, htmlclean()))
-		.pipe(
-			gulpif(
-				production,
-				replace(/css\/([a-z_-]+).css/g, "css/$1.min.css")
-			)
-		)
-		.pipe(dest("./public"))
-		.pipe(
-			notify({
-				title: "Layout updated!",
-			})
-		);
+    return src(source)
+        .pipe(extender({ annotations: false, verbose: false }))
+        .pipe(cachebust({ type: "timestamp" }))
+        .pipe(gulpif(production, htmlclean()))
+        .pipe(
+            gulpif(
+                production,
+                replace(/css\/([a-z_-]+).css/g, "css/$1.min.css")
+            )
+        )
+        .pipe(dest("./public"))
+        .pipe(
+            notify({
+                title: "Layout updated!",
+            })
+        );
 }
 
 function buildStyles(cb) {
-	return src(["src/styles/*.*", "!src/styles/_*.*"])
-		.pipe(gulpif(production, sourcemaps.init()))
-		.pipe(
-			gulpif(
-				"*.scss",
-				sass({
-					importer: require("node-sass-tilde-importer"),
-				}).on("error", sass.logError)
-			)
-		)
-		.pipe(gulpif("*.less", less()))
-		.pipe(postcss([autoprefixer()]))
-		.pipe(dest("public/css/"))
-		.pipe(gulpif(production, cleancss()))
-		.pipe(
-			gulpif(
-				production,
-				rename({
-					suffix: ".min",
-				})
-			)
-		)
-		.pipe(gulpif(production, sourcemaps.write(".")))
-		.pipe(gulpif(production, dest("public/css/")))
-		.pipe(server.stream())
-		.pipe(
-			notify({
-				title: "Styles updated!",
-			})
-		);
+    return src(["src/styles/*.*", "!src/styles/_*.*"])
+        .pipe(gulpif(production, sourcemaps.init()))
+        .pipe(
+            gulpif(
+                "*.scss",
+                sass({
+                    importer: require("node-sass-tilde-importer"),
+                }).on("error", sass.logError)
+            )
+        )
+        .pipe(gulpif("*.less", less()))
+        .pipe(postcss([autoprefixer()]))
+        .pipe(dest("public/css/"))
+        .pipe(gulpif(production, cleancss()))
+        .pipe(
+            gulpif(
+                production,
+                rename({
+                    suffix: ".min",
+                })
+            )
+        )
+        .pipe(gulpif(production, sourcemaps.write(".")))
+        .pipe(gulpif(production, dest("public/css/")))
+        .pipe(server.stream())
+        .pipe(
+            notify({
+                title: "Styles updated!",
+            })
+        );
 }
 
 function buildScripts(cb) {
-	return src("src/js/main.js")
-		.pipe(webpack(require("./webpack.config.js"), compiler))
-		.pipe(dest("public/js/"))
-		.pipe(
-			notify({
-				title: "Scripts updated!",
-			})
-		);
+    const config = require("./webpack.config.js");
+    config.mode = process.env.NODE_ENV;
+
+    return src("src/js/main.js")
+        .pipe(webpackStream(config, webpack4))
+        .pipe(dest("public/js/"))
+        .pipe(
+            notify({
+                title: "Scripts updated!",
+            })
+        );
 }
 
 // required for pagelist
 function buildConfig(cb) {
-	const content = {
-		name: pkg.name,
-		repository: {
-			url: pkg.repository.url,
-		},
-	};
+    const content = {
+        name: pkg.name,
+        repository: {
+            url: pkg.repository.url,
+        },
+    };
 
-	fs.writeFile("./public/config.json", JSON.stringify(content), cb);
+    fs.writeFile("./public/config.json", JSON.stringify(content), cb);
 }
 
 // required for pagelist
 function buildPagelist(cb) {
-	return src("src/markup/*.html")
-		.pipe(filelist("pagelist.json", { flatten: true }))
-		.pipe(dest("./public"));
+    return src("src/markup/*.html")
+        .pipe(filelist("pagelist.json", { flatten: true }))
+        .pipe(dest("./public"));
 }
 
 function watchFiles(cb) {
-	watch("./src/markup/*.html", { delay: 2000 }).on("change", (path) => {
-		buildHtml(null, path);
-		server.reload();
-	});
-	watch(assets, { delay: 2000 })
-		.on("add", (path) => {
-			logSuccess(`File ${path} was added`);
-			buildAssets(null, path);
-			reload(cb);
-		})
-		.on("change", (path) => {
-			logSuccess(`File ${path} was updated`);
-			buildAssets(null, path);
-			reload(cb);
-		});
-	watch("./src/styles/**/*", { delay: 2000 }, series(buildStyles));
-	watch(
-		"./src/js/**/*",
-		{ delay: 2000 },
-		series(buildScripts, reload)
-	);
+    watch("./src/markup/*.html", { delay: 2000 }).on("change", (path) => {
+        buildHtml(null, path);
+        server.reload();
+    });
+    watch(assets, { delay: 2000 })
+        .on("add", (path) => {
+            logSuccess(`File ${path} was added`);
+            buildAssets(null, path);
+            reload(cb);
+        })
+        .on("change", (path) => {
+            logSuccess(`File ${path} was updated`);
+            buildAssets(null, path);
+            reload(cb);
+        });
+    watch("./src/styles/**/*", { delay: 2000 }, series(buildStyles));
+    watch("./src/js/**/*", { delay: 2000 }, series(buildScripts, reload));
 }
 
 function reload(cb) {
-	server.reload();
-	cb();
+    server.reload();
+    cb();
 }
 
 function runServer(cb) {
-	server.init({
-		server: {
-			baseDir: "public/",
-		},
-	});
-	cb();
+    server.init({
+        server: {
+            baseDir: "public/",
+        },
+    });
+    cb();
 }
 
 function compress(cb) {
-	return src("./public/**").pipe(zip("archive.zip")).pipe(dest("./public/"));
+    return src("./public/**").pipe(zip("archive.zip")).pipe(dest("./public/"));
 }
 
 function deploy(cb) {
-	if (pkg.name === "project-name") {
-		throw new Error(
-			clc.red("Project has a default name. Change it in package.json")
-		);
-	}
+    if (pkg.name === "project-name") {
+        throw new Error(
+            clc.red("Project has a default name. Change it in package.json")
+        );
+    }
 
-	return src("./public/**").pipe(
-		rsync({
-			root: "public/",
-			hostname: "ildar-meyker.ru",
-			destination:
-				"/home/users/i/ildar-meyker/domains/ildar-meyker.ru/html/" +
-				pkg.name +
-				"/",
-		})
-	);
+    return src("./public/**").pipe(
+        rsync({
+            root: "public/",
+            hostname: "ildar-meyker.ru",
+            destination:
+                "/home/users/i/ildar-meyker/domains/ildar-meyker.ru/html/" +
+                pkg.name +
+                "/",
+        })
+    );
 }
 
 const buildAll = series(
-	parallel(buildAssets, buildHtml, buildStyles, buildScripts),
-	buildPagelist,
-	buildConfig
+    parallel(buildAssets, buildHtml, buildStyles, buildScripts),
+    buildPagelist,
+    buildConfig
 );
 
 const browse = parallel(runServer, watchFiles);
