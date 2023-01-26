@@ -8,11 +8,11 @@
   "description": "",
   "author": "",
   "scripts": {
-    "start": "npm run watch",
-    "dev": "npm run watch",
-    "watch": "gulp watch --development",
-    "build": "gulp build --production",
-    "push": "gulp push --production && rm public/archive.zip"
+      "start": "npm run watch",
+      "dev": "npm run watch",
+      "watch": "NODE_ENV=development gulp watch",
+      "build": "NODE_ENV=production gulp build",
+      "push": "NODE_ENV=production gulp push && rm public/archive.zip"
   },
   "browserslist": [
     "defaults"
