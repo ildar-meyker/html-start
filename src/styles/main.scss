@@ -1,6 +1,10 @@
 @import "./helpers/mixins.scss";
 @import "./helpers/helpers.scss";
 
+:root {
+    --side-padding: 20px;
+}
+
 * {
     box-sizing: border-box;
 }
@@ -16,5 +20,15 @@ img {
 
 img[data-src] {
     visibility: hidden;
+}
+
+a,
+button {
+    transition: all 0.2s;
+}
+
+a {
+    text-decoration: none;
+    color: currentColor;
 }
 
