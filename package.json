@@ -10,6 +10,7 @@
     "scripts": {
         "start": "npm run watch",
         "dev": "npm run watch",
+        "build": "npm run prod",
         "watch": "NODE_ENV=development gulp watch",
         "prod": "NODE_ENV=production gulp build",
         "deploy": "NODE_ENV=production gulp push && rm public/archive.zip"
