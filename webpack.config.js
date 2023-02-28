@@ -1,15 +1,36 @@
 //Webpack requires this to work with directories
 const path = require("path");
+const TerserPlugin = require("terser-webpack-plugin");
 
-// This is main configuration object that tells Webpackw what to do.
+const mode = process.env.NODE_ENV;
+
+const entry = {
+    pagelist: "./src/js/main.js",
+};
+
+if (mode === "production") {
+    entry["main.min"] = "./src/js/main.js";
+}
+
 module.exports = {
-    //path to entry paint
-    entry: "./src/js/main.js",
+    mode,
 
-    //path and filename of the final output
+    devtool: false,
+
+    entry,
+
     output: {
         path: path.resolve(__dirname, "public/js"),
-        filename: "bundle.js",
+        filename: "[name].js",
+    },
+
+    optimization: {
+        minimize: true,
+        minimizer: [
+            new TerserPlugin({
+                include: /\.min\.js$/,
+            }),
+        ],
     },
 
     module: {
@@ -43,8 +64,4 @@ module.exports = {
             },
         ],
     },
-
-    devtool: "source-map",
-
-    mode: "development",
 };

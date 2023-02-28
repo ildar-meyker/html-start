@@ -84,7 +84,7 @@ function buildHtml(cb, path) {
         .pipe(
             gulpif(
                 production,
-                replace(/css\/([a-z_-]+).css/g, "css/$1.min.css")
+                replace(/(css|js)\/([a-z_-]+).(css|js)/g, "$1/$2.min.$3")
             )
         )
         .pipe(dest("./public"))
