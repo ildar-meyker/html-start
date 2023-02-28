@@ -145,10 +145,8 @@ function buildScripts(cb) {
 // required for pagelist
 function buildConfig(cb) {
     const content = {
-        name: pkg.name,
-        repository: {
-            url: pkg.repository.url,
-        },
+        repoUrl: pkg.repository.url,
+        zipUrl: "http://ildar-meyker.ru/html/" + pkg.name + "/archive.zip",
     };
 
     fs.writeFile("./public/config.json", JSON.stringify(content), cb);
