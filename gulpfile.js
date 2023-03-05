@@ -80,6 +80,7 @@ function buildHtml(cb, path) {
     return src(source)
         .pipe(extender({ annotations: false, verbose: false }))
         .pipe(cachebust({ type: "timestamp" }))
+        .pipe(replace(/(woff2\?t=\d+)/g, "woff2"))
         .pipe(gulpif(production, htmlclean()))
         .pipe(
             gulpif(
