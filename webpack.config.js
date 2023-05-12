@@ -5,7 +5,7 @@ const TerserPlugin = require("terser-webpack-plugin");
 const mode = process.env.NODE_ENV;
 
 const entry = {
-    pagelist: "./src/js/main.js",
+    main: "./src/js/main.js",
 };
 
 if (mode === "production") {
