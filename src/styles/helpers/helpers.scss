@@ -85,3 +85,25 @@
         right: 0;
     }
 }
+
+.image-box {
+    display: block;
+    position: relative;
+    overflow: hidden;
+
+    &--rounded {
+        background: #f3f3f3;
+        border-radius: 1rem;
+    }
+
+    &--cover {
+        img {
+            object-fit: cover !important;
+        }
+    }
+
+    img {
+        @include fill;
+        object-fit: contain;
+    }
+}
