@@ -35,8 +35,24 @@
         max-width: 350px;
     }
 
+    .components__500 {
+        max-width: 500px;
+    }
+
+    .components__600 {
+        max-width: 600px;
+    }
+
     .components__800 {
         max-width: 800px;
+    }
+
+    .components__1000 {
+        max-width: 1000px;
+    }
+
+    .components__1200 {
+        max-width: 1200px;
     }
 
     .components__title {
@@ -51,12 +67,40 @@
 
 <main>
     <div class="components">
-        <div class="components__icons"></div>
-        <div class="components__space"></div>
-        <div class="components__350"></div>
-        <div class="components__space"></div>
-        <div class="components__800"></div>
-        <div class="components__space"></div>
+        <nav class="nav-tabs js-tabs">
+            <ul>
+                <li class="active"><a href="#tab-buttons">buttons</a></li>
+                <li><a href="#tab-inputs">inputs</a></li>
+                <li><a href="#tab-selects">selects</a></li>
+                <li><a href="#tab-icons">icons</a></li>
+                <li><a href="#tab-panels">panels</a></li>
+                <li><a href="#tab-sliders">sliders</a></li>
+                <li><a href="#tab-forms">forms</a></li>
+                <li><a href="#tab-popups">popups</a></li>
+                <li><a href="#tab-cards">cards</a></li>
+                <li><a href="#tab-navs">navs</a></li>
+                <li><a href="#tab-props">props</a></li>
+                <li><a href="#tab-lists">lists</a></li>
+            </ul>
+        </nav>
+
+        <div class="tabs-content">
+            <div class="active" id="tab-buttons"></div>
+            <div id="tab-buttons"></div>
+            <div id="tab-inputs"></div>
+            <div id="tab-selects"></div>
+            <div id="tab-icons">
+                <div class="components__icons"></div>
+            </div>
+            <div id="tab-panels"></div>
+            <div id="tab-sliders"></div>
+            <div id="tab-forms"></div>
+            <div id="tab-popups"></div>
+            <div id="tab-cards"></div>
+            <div id="tab-navs"></div>
+            <div id="tab-props"></div>
+            <div id="tab-lists"></div>
+        </div>
     </div>
 </main>
 <!-- @@close-->

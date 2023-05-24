@@ -16,6 +16,7 @@
 }
 
 @mixin reset-button {
+    display: inline-block;
     border: 0;
     padding: 0;
     background: none;
